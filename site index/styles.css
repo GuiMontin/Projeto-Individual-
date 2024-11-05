@@ -15,6 +15,9 @@
 
 html{
   scroll-behavior: smooth;
+  background-image: url('https://th.bing.com/th/id/R.0212d2d0cd633e86bcf5fbaf8d1ada58?rik=j9rXbiMp49APHQ&riu=http%3a%2f%2fwww.pixelstalk.net%2fwp-content%2fuploads%2f2016%2f07%2fHD-Red-Bull-Logo-Wallpapers.jpg&ehk=kQj1VB0IS4mUBkfgjrr45zPOLzkjQvVPEsZsBv5Tdog%3d&risl=&pid=ImgRaw&r=0'); /* Substitua pelo caminho da sua imagem */
+    background-size: cover; /* Faz com que a imagem cubra toda a tela */
+    background-repeat: no-repeat; /* Impede que a imagem se repita */
 }
 
 .header {
