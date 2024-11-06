@@ -1,59 +1,81 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 :root {
-  --primary: #363636;
-  --secondary: #ddd;
-  --logo-color: #0080ff;
+    --primary: #363636; /* Cinza escuro */
+    --secondary: #ddd; /* Cinza claro */
+    --logo-color: #0080ff; /* Azul da Red Bull */
+    --highlight-red: #D50032; /* Vermelho da Red Bull */
+    --highlight-yellow: #FFCC00; /* Amarelo da Red Bull */
 }
 
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-html{
-  scroll-behavior: smooth;
-  background-image: url('https://th.bing.com/th/id/R.0212d2d0cd633e86bcf5fbaf8d1ada58?rik=j9rXbiMp49APHQ&riu=http%3a%2f%2fwww.pixelstalk.net%2fwp-content%2fuploads%2f2016%2f07%2fHD-Red-Bull-Logo-Wallpapers.jpg&ehk=kQj1VB0IS4mUBkfgjrr45zPOLzkjQvVPEsZsBv5Tdog%3d&risl=&pid=ImgRaw&r=0'); /* Substitua pelo caminho da sua imagem */
-    background-size: cover; /* Faz com que a imagem cubra toda a tela */
-    background-repeat: no-repeat; /* Impede que a imagem se repita */
+html {
+    scroll-behavior: smooth;
+    background-image: url('https://www.pixelstalk.net/wp-content/uploads/2016/07/HD-Red-Bull-Logo-Wallpapers.jpg');
+    background-size: cover;  /* Faz a imagem cobrir toda a tela */
+  background-position: center; /* Centraliza a imagem */
+  background-attachment: fixed; /* Fixa a imagem durante o rolar da página */
+  margin: 0; /* Remove qualquer margem padrão do body */
+  height: 100vh; /* Garante que o corpo ocupe 100% da altura da tela */
+}
+
+body {
+    color: var(--secondary);
+    font-size: 16px;
+    line-height: 1.6;
+
 }
 
 .header {
-  background-color: var(--primary);
-  width: 100%;
-  height: 10vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  z-index: 9999;
+background-color: black;
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 4px 6px var(--secondary);
 }
 
-.header .navbar {
-  display: flex;
-  width: inherit;
-  justify-content: space-around;
-  align-items: center;
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
-.header .navbar .navbar-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  text-decoration: none;
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
 }
 
-.header .navbar .navbar-links li a {
-  color: var(--secondary);
-  text-decoration: none;
+.nav-button {
+    font-weight: 500;
+    text-decoration: none;
+    background-color: var(--highlight-red);
+    color: white;
+    box-shadow: 0 3px 15px var(--highlight-yellow);
+    margin: 10px;
+    font-size: 15px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.header .navbar .logo-link .logo {
-  width: 104px;
+.nav-button:hover {
+    transform: scale(1.05);
+    background-color: var(--highlight-yellow);
+    color: var(--primary);
 }
 
-.header .navbar .profile-link .profile {
-  width: 36px;
+.profile-link .profile {
+    width: 36px;
+    border-radius: 50%;
 }
