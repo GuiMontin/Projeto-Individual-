@@ -1,13 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
-:root {
-    --primary: #363636; /* Cinza escuro */
-    --secondary: #ddd; /* Cinza claro */
-    --logo-color: #0080ff; /* Azul da Red Bull */
-    --highlight-red: #D50032; /* Vermelho da Red Bull */
-    --highlight-yellow: #FFCC00; /* Amarelo da Red Bull */
-}
-
 * {
     padding: 0;
     margin: 0;
@@ -15,34 +5,48 @@
     font-family: 'Poppins', sans-serif;
 }
 
+/* Configuração de fundo e layout geral */
 html {
     scroll-behavior: smooth;
-    background-image: url('https://www.pixelstalk.net/wp-content/uploads/2016/07/HD-Red-Bull-Logo-Wallpapers.jpg');
-    background-size: cover;  /* Faz a imagem cobrir toda a tela */
-  background-position: center; /* Centraliza a imagem */
-  background-attachment: fixed; /* Fixa a imagem durante o rolar da página */
-  margin: 0; /* Remove qualquer margem padrão do body */
-  height: 100vh; /* Garante que o corpo ocupe 100% da altura da tela */
+    /* background-image: url('https://www.pixelstalk.net/wp-content/uploads/2016/07/HD-Red-Bull-Logo-Wallpapers.jpg'); */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    
+    height: 100vh;
 }
 
+/* Configuração geral do body */
 body {
-    color: var(--secondary);
+    color: #ddd;
     font-size: 16px;
     line-height: 1.6;
-
+    border: 10px solid #cc0e00;
 }
 
+/* Estilo do cabeçalho */
 .header {
-background-color: black;
+    background-color: rgb(0, 0, 0);
     width: 100%;
     height: 10vh;
+    
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-    box-shadow: 0 4px 6px var(--secondary);
+    border-bottom: 10px solid #DA291C; /* Bordas em vermelho Milan */
 }
 
+.logo-link {
+    display: flex;
+    align-items: center;
+}
+
+.header .logo {
+    width: 60px; /* Ajuste a largura conforme necessário */
+    height: auto;
+}
+
+/* Estilo de navegação */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -53,29 +57,241 @@ background-color: black;
 .navbar-links {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 80px;
+    margin: 10px;
 }
 
 .nav-button {
     font-weight: 500;
     text-decoration: none;
-    background-color: var(--highlight-red);
+    background-color: #DA291C; /* Vermelho Milan */
     color: white;
-    box-shadow: 0 3px 15px var(--highlight-yellow);
-    margin: 10px;
-    font-size: 15px;
+    box-shadow: 0 3px 15px rgba(218, 41, 28, 0.7); /* Sombra vermelha suave */
     padding: 10px 20px;
     border-radius: 25px;
-    transition: transform 0.3s ease, color 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .nav-button:hover {
     transform: scale(1.05);
-    background-color: var(--highlight-yellow);
-    color: var(--primary);
+    background-color: #000000; /* Preto ao passar o mouse */
+    color: #DA291C; /* Vermelho Milan no texto */
 }
 
-.profile-link .profile {
-    width: 36px;
-    border-radius: 50%;
+/* Estilo para o ícone de perfil */
+.profile-link {
+    display: flex;
+    align-items: center;
+    /* border: 4px solid rgb(181, 10, 10); Borda vermelha Milan */
+    border-radius: 20%; 
+    
 }
+
+.profile {
+    width: 40px;
+    height: auto;
+   border-radius: 20%;
+}
+/* Estilo do carrossel */
+.slider {
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding: 0;
+}
+
+.slider-containner {
+    width: 400%; /* 100% por imagem, ajuste conforme o número de imagens */
+    height: 90vh;
+    display: flex;
+    transition: transform 0.5s ease; /* Adiciona uma transição suave */
+}
+
+
+
+.slider-box {
+    width: 100vw; /* Cada imagem ocupa a largura total da tela */
+    height: auto;
+    position: relative;
+    text-align: center;
+}
+
+.slider-box img {
+    width: 100%; /* As imagens ocupam a largura total de cada box */
+    height: auto;
+}
+
+
+
+/* Minha historia */
+.content .container {
+  display: flex; /* Alinha a imagem e o texto lado a lado */
+  gap: 20px; /* Espaço entre a imagem e o texto */
+  align-items: center; /* Alinha verticalmente */
+  padding: 20px;
+  flex-direction: row-reverse;
+ 
+  background-color: #000000;
+}
+.profile-image {
+  width: 200px;
+  height: auto;
+  border-radius: 15px; /* Bordas arredondadas */
+  border: 5px solid #DA291C; /* Borda vermelha */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  padding: 10px; /* Espaço entre a borda e a imagem */
+  background-color: #1e0202; /* Cor de fundo branca para destacar a imagem */
+} 
+
+.text-content {
+ /* Limita a largura do texto */
+}
+
+.text-content h1 {
+  font-size: 40px;
+  color: #DA291C;
+  margin-bottom: 10px;
+}
+
+.text-content h3, .text-content p, .text-content ul {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.text-content ul {
+  padding-left: 20px;
+}
+
+
+/* Footer */
+
+
+.footer-container {
+
+    font-family: 'Poppins';
+     
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    
+    text-align: left;
+    background-color: black;
+  
+  }
+  .footer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinha os itens à esquerda */
+   
+  }
+  
+  .h3-r {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+  }
+  .social-icons {
+    display: flex;
+    justify-content: center;  /* Centraliza as imagens horizontalmente */
+    align-items: center;      /* Alinha as imagens verticalmente */
+    gap: 15px;                /* Espaçamento entre os ícones */
+    margin-top: 10px;         /* Espaço superior, se necessário */
+  }
+  
+  /* Ajuste as imagens das redes sociais */
+  .social-icons img {
+    width: 40px;  /* Ajuste o tamanho das imagens (tamanho uniforme) */
+    height: 40px; /* Mantenha as proporções dos ícones */
+    object-fit: contain; /* Garante que as imagens não se distorçam */
+    transition: transform 0.3s ease; /* Animação quando houver interação */
+  }
+  
+  .social-icons img:hover {
+    transform: scale(1.1); /* Aumenta um pouco o ícone quando o usuário passar o mouse */
+  }
+  
+  /* Estilo do endereço e do contato */
+  .p-footer {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #000000;
+    line-height: 1.5; /* Melhora o espaçamento entre as linhas */
+  }
+  
+  
+  .footer-links1 a {
+    margin-right: 70px;
+    text-decoration: none; 
+    color: #000000;
+    font-size: 16px;
+  }
+  
+  .footer-links1 li {
+    margin-bottom: 15px;
+  }
+  
+  .footer-links2 a {
+    text-decoration: none; 
+    color: #000000;
+    font-size: 16px;
+  }
+  
+  .footer-links2 li {
+    margin-bottom: 15px;
+  }
+  
+  .social-icons img {
+    width: 30px; /* Ajuste o valor para o tamanho desejado */
+    height: 30px;
+  }
+  .social-icons a {
+    display: inline-block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    margin-right: 15px; 
+    width: 30px; /* Ajuste o valor para o tamanho desejado */
+    height: 30px;
+  }
+  
+  .footer-logo img {
+    max-width: 200px; /* Define a largura máxima da imagem */
+    max-height: 100px; /* Define a altura máxima da imagem */
+    width: auto; /* Ajuste automático da largura para manter a proporção */
+    height: auto; /* Ajuste automático da altura para manter a proporção */
+  }
+  
+  .p-footer {
+    color: #000000;
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  ul {
+    list-style: none;
+    text-decoration: none;
+  }
+  
+  .h3-n {
+    margin-bottom: 55%;
+    all: unset;
+    font-size: 25px;
+  }
+  
+  .links {
+    display: flex;
+  }
+  
+  .h3-r {
+    margin-bottom: 35%;
+    all: unset;
+    font-size: 16px;
+  }
+  
+  .p-copy {
+    text-align: center;    /* Centraliza o texto horizontalmente */
+    margin: 0;             /* Remove qualquer margem padrão */
+    padding: 10px 0;       /* Adiciona algum espaçamento vertical */
+  }

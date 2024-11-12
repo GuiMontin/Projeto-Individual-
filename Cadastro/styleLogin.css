@@ -22,7 +22,7 @@ body {
     justify-content: center;
     width: 100%;
     height: fit-content;
-    background-image: url('https://th.bing.com/th/id/R.0212d2d0cd633e86bcf5fbaf8d1ada58?rik=j9rXbiMp49APHQ&riu=http%3a%2f%2fwww.pixelstalk.net%2fwp-content%2fuploads%2f2016%2f07%2fHD-Red-Bull-Logo-Wallpapers.jpg&ehk=kQj1VB0IS4mUBkfgjrr45zPOLzkjQvVPEsZsBv5Tdog%3d&risl=&pid=ImgRaw&r=0'); /* Substitua pelo caminho da sua imagem */
+background-image: url('../img/formula\ 1\ login.jpg'); /* Substitua pelo caminho da sua imagem */
     background-size: cover; /* Faz com que a imagem cubra toda a tela */
     background-repeat: no-repeat; /* Impede que a imagem se repita */
     background-position: center; /* Centraliza a imagem */
@@ -42,75 +42,66 @@ body {
     width: 100%;
     height: 10vh;
     display: flex;
-    justify-content: center;
     align-items: center;
+    padding: 0 20px;
+    /* border-bottom: 10px solid #DA291C; Bordas em vermelho Milan */
 }
 
-.header .navbar {
+.logo-link {
     display: flex;
-    width: inherit;
-    justify-content: space-around;
     align-items: center;
 }
 
-.header .navbar .navbar-links {
+.header .logo {
+    width: 60px; /* Ajuste a largura conforme necessário */
+    height: auto;
+}
+
+/* Estilo de navegação */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar-links {
     list-style: none;
     display: flex;
-    gap: 20px;
-    text-decoration: none;
+    gap: 80px;
 }
-.header a, a:active, a:hover, a:visited {
-    color: inherit;
-    text-decoration: none;}
-/* .header .navbar .navbar-links:hover {
-    box-shadow: 0px 0px 20px 5px var(--logo-color); /* Efeito de brilho */
-    /* transform: scale(1.05); /* Aumenta ligeiramente o tamanho para dar efeito de botão */
-    /* transition: 0.5s ease; */
-/* } */
 
-.header .navbar .navbar-links li a {
-    color: var(--secondary);
+.nav-button {
     font-weight: 500;
     text-decoration: none;
-    transition: color 0.3s;
-    display: flex;
-    background-color: var(--secondary);
+    background-color: #DA291C; /* Vermelho Milan */
     color: white;
-    box-shadow: 0 3px 15px var(--logo-color);
-    margin-right: 10px;
-    font-size: 15px;
-    padding: 15px 30px;
+    box-shadow: 0 3px 15px rgba(218, 41, 28, 0.7); /* Sombra vermelha suave */
+    padding: 10px 20px;
     border-radius: 25px;
-    margin: 20px;;
-    transition: background-color 0.3s;
-  }
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
 
-  .botao-header {
+.nav-button:hover {
+    transform: scale(1.05);
+    background-color: #000000; /* Preto ao passar o mouse */
+    color: #DA291C; /* Vermelho Milan no texto */
+}
+
+/* Estilo para o ícone de perfil */
+.profile-link {
     display: flex;
-    background-color: var(--secondary);
-    color: white;
-    box-shadow: 0 3px 15px var(--logo-color);
-    margin-right: 10px;
-    font-size: 15px;
-    padding: 15px 30px;
-    border-radius: 25px;
-    transition: background-color 0.3s;
-  }
-
-
-.botao-header:hover {
-  background-color: #45a049;
+    align-items: center;
+    border: 4px solid rgb(181, 10, 10); /* Borda vermelha Milan */
+    border-radius: 20%; 
+    
 }
 
-
-.header .navbar .logo-link .logo {
-    width: 104px;
+.profile {
+    width: 40px;
+    height: auto;
+   border-radius: 20%;
 }
-
-.header .navbar .profile-link .profile {
-    width: 36px;
-}
-
 .container {
     display: flex;
     flex-direction: column;
@@ -130,8 +121,8 @@ body {
     background: transparent;
     border-radius: 30px;
     padding: 25px 100px;
-    border: 5px solid var(--logo-color);
-    box-shadow: 0 10px 200px var(--logo-color);
+    border: 5px solid black;
+    /* box-shadow: 0 10px 200px red; */
     backdrop-filter: blur(10px);
     position: absolute;
     /* transform: translatey(-5vw); */
@@ -218,12 +209,12 @@ body {
 .input-boxlogin input {
     width: 100%;
     height: 100%;
-    background: transparent;
+    /* background: transparent; */
     border: none;
     outline: none;
     border: 7px solid var(logo);
     border-radius: 40px;
-    box-shadow: 0 4px 8px var(--primary);
+    box-shadow: 0 4px 8px red;
     font-size: 16px;
     color: #000000;
     padding: 20px 45px 20px 20px;
