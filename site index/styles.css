@@ -21,7 +21,7 @@ body {
     color: #ddd;
     font-size: 16px;
     line-height: 1.6;
-    border: 10px solid #cc0e00;
+   
 }
 
 /* Estilo do cabeçalho */
@@ -33,7 +33,7 @@ body {
     display: flex;
     align-items: center;
     padding: 0 20px;
-    border-bottom: 10px solid #DA291C; /* Bordas em vermelho Milan */
+    border-bottom: 3px solid #ffffff; /* Bordas em vermelho Milan */
 }
 
 .logo-link {
@@ -115,6 +115,7 @@ body {
     height: auto;
     position: relative;
     text-align: center;
+    border-bottom: 23px solid #ff0000; /* Bordas em vermelho Milan */
 }
 
 .slider-box img {
@@ -122,7 +123,54 @@ body {
     height: auto;
 }
 
+/* icones partes */
+.primeira-parte {
+  display: flex;
+  flex-direction: column; /* Coloca título e cards em coluna */
+  align-items: center; /* Centraliza os itens horizontalmente */
+  padding: 20px; /* Aumenta o espaçamento interno */
+  
+  margin-bottom: 100px;
+  background-color: #f9f9f9; /* Opcional: cor de fundo */
+}
+.primeira-parte h1 {
+  font-size: 2rem;
+  color: #000000;
+  text-align: center; /* Centraliza o título */
+  padding: 20px;
 
+  margin-bottom: 50px; /* Espaçamento abaixo do título */
+}
+
+/* Estilo para o contêiner dos cards */
+.contentas-cards {
+  display: flex; /* Alinha os cards lado a lado */
+  justify-content: space-around; /* Espaça os cards uniformemente */
+  flex-wrap: wrap; /* Permite quebra em telas menores */
+  width: 100%; /* Garante que ocupe toda a largura disponível */
+  gap: 20px; /* Espaçamento entre os cards */
+}
+
+/* Estilo individual dos cards */
+.iconeImg {
+  text-align: center; /* Centraliza o conteúdo do card */
+  width: 200px; /* Aumenta a largura dos cards */
+}
+
+/* Estilo para as imagens */
+.iconeImg img {
+  width: 150px; /* Aumenta a largura das imagens */
+  height: auto; /* Mantém a proporção */
+  margin-bottom: 15px; /* Espaçamento maior abaixo das imagens */
+}
+
+/* Estilo para o texto */
+.iconeImg p {
+  font-size: 16px; /* Aumenta o tamanho do texto */
+  color: #333; /* Cor do texto */
+  margin: 0; /* Remove margens extras */
+  line-height: 1.5; /* Espaçamento entre linhas */
+}
 
 /* Minha historia */
 .content .container {
@@ -131,19 +179,32 @@ body {
   align-items: center; /* Alinha verticalmente */
   padding: 20px;
   flex-direction: row-reverse;
+  border-bottom: 3px solid #ff0202; /* Bordas em vermelho Milan */
  
   background-color: #000000;
 }
-.profile-image {
-  width: 200px;
-  height: auto;
-  border-radius: 15px; /* Bordas arredondadas */
-  border: 5px solid #DA291C; /* Borda vermelha */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
-  padding: 10px; /* Espaço entre a borda e a imagem */
-  background-color: #1e0202; /* Cor de fundo branca para destacar a imagem */
-} 
 
+
+.profile-image .text-content {
+  flex: 1; /* Cada metade ocupa 50% */
+}
+
+.content img {
+  width: 25%;
+  height: 50%;
+  border-radius: 15%;
+  object-fit: cover;
+  /* border: 10px solid white; */
+  box-shadow: 0 0 20px;
+  
+}
+
+
+.profile-image img {
+  width: 50%;
+  height: 100%;
+  object-fit: cover; /* Ajusta a imagem para preencher o espaço */
+}
 .text-content {
  /* Limita a largura do texto */
 }
@@ -162,6 +223,162 @@ body {
 .text-content ul {
   padding-left: 20px;
 }
+
+/* Referências  */
+
+/* Integrantes */
+
+/*Container que abriga os cards:*/
+
+
+.Integrantes-titulo h1 {
+
+
+  text-align: center; /* Centraliza o título */
+  margin-bottom: 20px; /* Espaço entre o título e os cards */
+  font-size: 2rem; /* Ajuste de tamanho da fonte */
+  font-weight: bold;
+}
+
+.Integrantes-titulo span {
+  color: var(--logo-color) /* Adiciona cor ao 'Air' no título */
+}
+
+.container-cards {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /*Faz com que os cards não fiquem
+  só numa linha se a tela for menor:*/
+  flex-wrap: wrap;
+  margin: 40px 0;
+}
+
+/*Estilos dos cards, dentro do container:*/
+.card {
+  position: relative;
+  /* border: 5px solid var(--primary); */
+  width: 300px;
+  height: 400px;
+  background: rgba(255, 17, 17, 0.05);
+  margin: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*Embaça o fundo:*/
+  backdrop-filter: blur(2px);
+}
+
+/*Estilo do conteúdo dentro dos cards:*/
+.content-cards {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 1.5;
+  transition: 0.5s;
+}
+
+/*Comportamento do conteúdo dos cards ao
+passar o mouse em cima:*/
+.container-cards .card:hover .content-cards {
+  opacity: 1;
+  /*Sobe um pouco o conteúdo do card
+  pra caber os ícones de rede social:*/
+  transform: translateY(-20px);
+}
+
+/*Imagem do avatar, com borda externa sutil:*/
+.container-cards .card .content-cards .avatarImg {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 10px solid black;
+}
+
+/*Posicionamento da imagem do avatar dentro da borda:*/
+.container-cards .card .content-cards .avatarImg img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  color: black;
+  
+}
+
+/*Estilo do nome/título do avatar:*/
+.container-cards .card .content .avatarTxt h3 {
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+  font-size: 18px;
+  text-align: center;
+  margin: 20px 0 10px;
+  line-height: 1.1em;
+}
+
+/*Estilo do cargo/subtítulo do avatar:*/
+.container-cards .card .content .avatarTxt h3 span {
+  font-size: 12px;
+  font-weight: 300;
+  text-transform: initial;
+}
+
+/*Posição dos ícones de rede social do avatar:*/
+.container-cards .card .socialIcons {
+  position: absolute;
+  bottom: 50px;
+  display: flex;
+  
+}
+
+/*Estilo da lista de rede social:*/
+.container-cards .card .socialIcons li {
+  /*Tira as bolinhas de lista:*/
+  list-style: none;
+  /*Dá espaçamento pros ícones*/
+  margin: 0 10px;
+  /*Deixa escondido embaixo do card:*/
+  transform: translateY(40px);
+  /*Deixa a transição suave:*/
+  transition: 0.5s;
+  opacity: 0;
+  /*Faz a transição acontecer em cascata,
+  a partir dos valores da variável "--i"
+  definida lá no HTML:*/
+  transition-delay: calc(0.1s * var(--i));
+  
+}
+
+/*Comportamento dos ícones rede social ao 
+passar o mouse em cima:*/
+.container-cards .card:hover .socialIcons li {
+  /*Faz os ícones subirem pra uma posição
+  visível, já que antes estavam escondidos:*/
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+/*Estilo ícones de rede social, dentro da tag "a":*/
+.container-cards .card .socialIcons li a {
+  color: rgb(0, 0, 0);
+  font-size: 24px;
+
+
+}
+
+
 
 
 /* Footer */
