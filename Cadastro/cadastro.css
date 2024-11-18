@@ -25,6 +25,79 @@ body {
     background-size: cover;
 }
 
+
+.header {
+    background-color: transparent;
+    width: 100%;
+    height: 10vh;
+    
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    /* border-bottom: 3px solid #ffffff; Bordas em vermelho Milan */
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+}
+
+.header .logo {
+    width: 60px; /* Ajuste a largura conforme necessário */
+    height: auto;
+    margin-left: 100px;
+}
+
+/* Estilo de navegação */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 80px;
+    margin-left: 30px;
+}
+
+.nav-button {
+    font-weight: 500;
+    text-decoration: none;
+    background-color: #DA291C; /* Vermelho Milan */
+    color: white;
+    box-shadow: 0 3px 15px rgba(218, 41, 28, 0.7); /* Sombra vermelha suave */
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-button:hover {
+    transform: scale(1.05);
+    background-color: #000000; /* Preto ao passar o mouse */
+    color: #DA291C; /* Vermelho Milan no texto */
+}
+
+/* Estilo para o ícone de perfil */
+.profile-link {
+    display: flex;
+    align-items: center;
+    /* border: 4px solid rgb(181, 10, 10); Borda vermelha Milan */
+    border-radius: 20%; 
+    
+}
+
+.profile {
+    width: 40px;
+    height: auto;
+   border-radius: 20%;
+   margin-right: 100px;
+}
+
 #error_login{
     display: none;
     color: #CC0000;

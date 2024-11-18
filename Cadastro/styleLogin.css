@@ -41,10 +41,11 @@ background-image: url('../img/formula\ 1\ login.jpg'); /* Substitua pelo caminho
     background-color: transparent;
     width: 100%;
     height: 10vh;
+    
     display: flex;
     align-items: center;
     padding: 0 20px;
-    /* border-bottom: 10px solid #DA291C; Bordas em vermelho Milan */
+    /* border-bottom: 3px solid #ffffff; Bordas em vermelho Milan */
 }
 
 .logo-link {
@@ -55,6 +56,7 @@ background-image: url('../img/formula\ 1\ login.jpg'); /* Substitua pelo caminho
 .header .logo {
     width: 60px; /* Ajuste a largura conforme necessário */
     height: auto;
+    margin-left: 100px;
 }
 
 /* Estilo de navegação */
@@ -63,12 +65,15 @@ background-image: url('../img/formula\ 1\ login.jpg'); /* Substitua pelo caminho
     justify-content: space-between;
     align-items: center;
     width: 100%;
+
+
 }
 
 .navbar-links {
     list-style: none;
     display: flex;
     gap: 80px;
+    margin-left: 30px;
 }
 
 .nav-button {
@@ -92,7 +97,7 @@ background-image: url('../img/formula\ 1\ login.jpg'); /* Substitua pelo caminho
 .profile-link {
     display: flex;
     align-items: center;
-    border: 4px solid rgb(181, 10, 10); /* Borda vermelha Milan */
+    /* border: 4px solid rgb(181, 10, 10); Borda vermelha Milan */
     border-radius: 20%; 
     
 }
@@ -101,6 +106,7 @@ background-image: url('../img/formula\ 1\ login.jpg'); /* Substitua pelo caminho
     width: 40px;
     height: auto;
    border-radius: 20%;
+   margin-right: 100px;
 }
 .container {
     display: flex;

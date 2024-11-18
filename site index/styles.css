@@ -63,13 +63,15 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+
+
 }
 
 .navbar-links {
     list-style: none;
     display: flex;
     gap: 80px;
-    margin: 10px;
+    margin-left: 30px;
 }
 
 .nav-button {
@@ -429,6 +431,58 @@ color: var(--primary);
     
   }
   
+  
+.content-problemas {
+  margin: 20px 80px; /* Espaçamento interno */
+  
+  
+  background-color: white;
+  
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 8px; /* Bordas arredondadas */
+  box-shadow: 0 2px 10px var(--logo-color0); /* Sombra */
+ 
+}
+
+.content-problemas span {
+  color:  var(--logo-color);
+}
+
+/* Estilo do título principal da seção */
+.content-problemas h1 {
+  font-size: 2.5em; /* Tamanho da fonte */
+  color: var(--primary); /* Cor do texto */
+  margin-bottom: 20px; /* Espaçamento inferior */
+}
+
+/* Estilo dos subtítulos */
+.content-problemas h3 {
+  font-size: 1.8em; /* Tamanho da fonte */
+  color: var(--primary); /* Cor do texto */
+  margin: 20px 0; /* Margem superior e inferior */
+}
+
+/* Estilo dos parágrafos */
+.content-problemas p {
+  font-size: 1em; /* Tamanho da fonte */
+  line-height: 2.5; /* Altura da linha */
+  color: var(--primary); /* Cor do texto */
+  margin-bottom: 25px; /* Margem inferior */
+}
+
+/* Estilo da lista */
+.content-problemas ul {
+  padding-left: 0px; /* Espaçamento interno à esquerda */
+  list-style-type: disc; /* Estilo da lista */
+}
+
+/* Estilo dos itens da lista */
+.content-problemas ul li {
+  margin-bottom: 10px; /* Margem inferior para os itens */
+color: var(--primary);
+}
+
 
 
 
@@ -463,7 +517,7 @@ margin: 40px;
   border-radius: 15%;
   object-fit: cover;
   /* border: 10px solid white; */
-  box-shadow: 0 0 20px;
+  box-shadow: 0 0 20px white;
   
 }
 
@@ -486,6 +540,7 @@ margin: 40px;
 .text-content h3, .text-content p, .text-content ul {
   color: white;
   margin-bottom: 20px;
+  line-height: 2.4;
 }
 
 .text-content ul {
@@ -503,9 +558,10 @@ margin: 40px;
 
 
   text-align: center; /* Centraliza o título */
-  margin-bottom: 20px; /* Espaço entre o título e os cards */
+  margin: 50px;
   font-size: 2rem; /* Ajuste de tamanho da fonte */
   font-weight: bold;
+
 }
 
 .Integrantes-titulo span {
@@ -522,7 +578,7 @@ margin: 40px;
   /*Faz com que os cards não fiquem
   só numa linha se a tela for menor:*/
   flex-wrap: wrap;
-  margin: 40px 0;
+  margin-bottom: 100px;
 }
 
 /*Estilos dos cards, dentro do container:*/
