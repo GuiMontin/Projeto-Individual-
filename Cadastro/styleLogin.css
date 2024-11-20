@@ -108,6 +108,9 @@ background-image: url('../img/formula\ 1\ login.jpg'); /* Substitua pelo caminho
    border-radius: 20%;
    margin-right: 100px;
 }
+
+
+
 .container {
     display: flex;
     flex-direction: column;

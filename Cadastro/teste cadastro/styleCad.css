@@ -1,13 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Sour+Gummy:ital,wght@0,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --primary: #0c204c;
+    --secondary: #E30613 ;
+    --logo-color: #FFCC00;
+    
+}
 
 * {
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
-    font-family: 'Sour Gummy', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: fit-content;
+    background-image: url("https://wallpapercave.com/wp/wp9310602.jpg");
+    background-size: cover;
+       background-position: center;
+       background-attachment: fixed;
+       overflow: hidden;
+   
+    background-size: cover;
+}
+
+/* body {
     height: 100vh;
     
     background: linear-gradient(#000000, #ffffff, #00c3ff9c, #000000);
@@ -19,13 +43,90 @@ body {
     display: grid;
     place-content: center;
     font-family: 'Sour Gummy', sans-serif;
+} */
+
+.header {
+    background-color: black;
+    width: 100%;
+    height: 10vh;
+    
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    /* border-bottom: 3px solid #ffffff; Bordas em vermelho Milan */
 }
+
+.logo-link {
+    display: flex;
+    align-items: center;
+}
+
+.header .logo {
+    width: 60px; /* Ajuste a largura conforme necessário */
+    height: auto;
+    margin-left: 100px;
+}
+
+/* Estilo de navegação */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 80px;
+    margin-left: 40px;
+    margin-top: 5px;
+}
+
+.nav-button {
+    font-weight: 500;
+    text-decoration: none;
+    background-color: #DA291C; /* Vermelho Milan */
+    color: white;
+    box-shadow: 0 3px 15px rgba(218, 41, 28, 0.7); /* Sombra vermelha suave */
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-button:hover {
+    transform: scale(1.05);
+    background-color: #000000; /* Preto ao passar o mouse */
+    color: #DA291C; /* Vermelho Milan no texto */
+}
+
+/* Estilo para o ícone de perfil */
+.profile-link {
+    display: flex;
+    align-items: center;
+    /* border: 4px solid rgb(181, 10, 10); Borda vermelha Milan */
+    border-radius: 20%; 
+    
+}
+
+.profile {
+    width: 40px;
+    height: auto;
+   border-radius: 20%;
+   margin-right: 100px;
+}
+
+
 
 .container {
     position: relative;
     width: 850px;
     height: 500px;
+    margin: 100px 80px;
     background-color: #f6fdfc;
+    border: 5px solid black;
     box-shadow: 0 0 25px rgba(255, 27, 27, 0.467);
     border-radius: 25px;
     overflow: hidden;
@@ -85,9 +186,10 @@ span {
 input {
     width: 100%;
     padding: 12px 8px;
-    background-color: #cbffef;
+    background-color: #ffc5c5;
     border-radius: 20px;
-    border: #048b5e;
+    border: rgb(0, 0, 0);
+    
 }
 
 label {
@@ -97,7 +199,7 @@ label {
     transform: translateX(-50%);
     width: 0%;
     height: 2px;
-    background:#048b5e;
+    background:#730101;
     transition: 0.3s;
 }
 
@@ -121,6 +223,7 @@ button {
     border-radius: 20px;
     color: #000000;
     font-size: 12px;
+    margin-bottom: 34px;
     font-weight: bold;
     padding: 12px 45px;
     letter-spacing: 1px;
@@ -138,12 +241,12 @@ input:focus {
 }
 
 a:focus {
-    outline: 2px solid #048b5e;
+    outline: 2px solid rgb(215, 0, 0);
 }
 
 button:hover {
-    background: #048b5e;
-    color: #048b5e;
+    background: blue;
+    color: blue;
 }
 
 .form-container button {
@@ -152,7 +255,7 @@ button:hover {
 }
 
 .form-container button:hover {
-    background: #048b5e;
+    background: #cc5353;
     color: var(--grad-clr1);
 }
 
@@ -181,11 +284,10 @@ button:hover {
 }
 
 .overlay {
-    border-top-left-radius:  45%;
-    border-top-right-radius:  30%;
+ 
     position: relative;
-    background: #ff4848;
-    color: #fff;
+    background-image: url("https://wallpapercave.com/wp/wc1676492.jpg");
+    color: #ffffff;
     left: -150%;
     height: 100%;
     width: 250%;
