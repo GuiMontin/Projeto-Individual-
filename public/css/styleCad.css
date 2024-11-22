@@ -1,0 +1,425 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --primary: #0c204c;
+    --secondary: #E30613 ;
+    --logo-color: #FFCC00;
+    
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: fit-content;
+    background-image: url("../assets/pc_fifa18standardb.webp");
+    background-size: cover;
+       background-position: center;
+       background-attachment: fixed;
+       overflow: hidden;
+   
+    background-size: cover;
+}
+
+/* body {
+    height: 100vh;
+    
+    background: linear-gradient(#000000, #ffffff, #00c3ff9c, #000000);
+ background-image: url("https://wallpapercave.com/wp/wp9310602.jpg");
+ background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    
+    display: grid;
+    place-content: center;
+    font-family: 'Sour Gummy', sans-serif;
+} */
+
+.header {
+    background-color: black;
+    width: 100%;
+    height: 10vh;
+    
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    /* border-bottom: 3px solid #ffffff; Bordas em vermelho Milan */
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+}
+
+.header .logo {
+    width: 60px; /* Ajuste a largura conforme necessário */
+    height: auto;
+    margin-left: 100px;
+}
+
+/* Estilo de navegação */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 80px;
+    margin-left: 40px;
+    margin-top: 5px;
+}
+
+.nav-button {
+    font-weight: 500;
+    text-decoration: none;
+    background-color: #DA291C; /* Vermelho Milan */
+    color: white;
+    box-shadow: 0 3px 15px rgba(218, 41, 28, 0.7); /* Sombra vermelha suave */
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-button:hover {
+    transform: scale(1.05);
+    background-color: #000000; /* Preto ao passar o mouse */
+    color: #DA291C; /* Vermelho Milan no texto */
+}
+
+/* Estilo para o ícone de perfil */
+.profile-link {
+    display: flex;
+    align-items: center;
+    /* border: 4px solid rgb(181, 10, 10); Borda vermelha Milan */
+    border-radius: 20%; 
+    
+}
+
+.profile {
+    width: 40px;
+    height: auto;
+   border-radius: 20%;
+   margin-right: 100px;
+}
+
+
+
+.container {
+    position: relative;
+    width: 850px;
+    height: 500px;
+    margin: 100px 80px;
+    background-color: #f6fdfc;
+    border: 5px solid black;
+    box-shadow: 0 0 25px rgba(255, 27, 27, 0.467);
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.form-container {
+    position: absolute;
+    width: 60%;
+    margin: 40px 10px;
+
+    height: 100%;
+    padding: 0px 40px;
+    transition: all 0.6s ease-in-out;
+}
+
+.sign-up-container {
+    opacity: 0;
+    z-index: 1;
+}
+
+.sign-in-container {
+    z-index: 2;
+}
+
+form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 50px;
+}
+
+.social-container {
+    margin: 20px 0px;
+}
+
+.social-container a {
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 5px;
+    height: 40px;
+    width: 40px;    
+}
+
+span {
+    font-size: 12px;
+}
+
+.infield {
+    position: relative;
+    margin: 8px 0px;
+    width: 100%;
+}
+
+input {
+    width: 100%;
+    padding: 12px 8px;
+    background-color: #ffc5c5;
+    border-radius: 20px;
+    border: rgb(0, 0, 0);
+    
+}
+
+label {
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 2px;
+    background:#730101;
+    transition: 0.3s;
+}
+
+input:focus ~ label {
+    width: 100%;
+}
+
+a {
+    color: #000000;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 15px 0px;
+}
+
+a.forgot {
+    padding-bottom: 3px;
+    border-bottom: 2px solid #8b0404;
+}
+
+button {
+    border-radius: 20px;
+    color: #000000;
+    font-size: 12px;
+    margin-bottom: 34px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: #ffffff;
+    border: 3px solid #ffffff;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+button:focus,
+input:focus {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+}
+
+a:focus {
+    outline: 2px solid rgb(215, 0, 0);
+}
+
+button:hover {
+    background: blue;
+    color: blue;
+}
+
+.form-container button {
+    margin-top: 17px;
+    transition: 80ms ease-in;
+}
+
+.form-container button:hover {
+    background: #cc5353;
+    color: var(--grad-clr1);
+}
+
+.overlay-container {
+    position: absolute;
+    top: 0;
+    left: 60%;
+    width: 40%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+    z-index: 9;
+}
+
+#overlayBtn {
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    top: 304px;
+    transform: translateX(-50%);
+    width: 143.67px;
+    height: 40px;
+    border: 2px solid #000000;
+    background: transparent;
+    border-radius: 20px;
+}
+
+.overlay {
+ 
+    position: relative;
+    background-color: #290101;
+    background-image: url("../assets/formula\ 1\ login.jpg");
+    color: #ffffff;
+    left: -150%;
+    height: 100%;
+    width: 250%;
+    transition: transform 0.6s ease-in-out;
+}
+
+.overlay-panel {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+    text-align: center;
+    height: 100%;
+    width: 340px;
+    transition: 0.6s ease-in-out;
+}
+
+.overlay-left {
+    margin-left: 10px;
+    /* margin-top:4px; */
+    padding: 10px;
+    right: 60%;
+    transform: translateX(-12%);
+}
+
+.overlay-right {
+    right: 0;
+    transform: translateX(0%);
+}
+
+.overlay-panel h1{
+    color: #fff;
+}
+
+p {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+
+    letter-spacing: 0.5px;
+    margin: 25px 0px 35px;
+    color: #000000;
+}
+
+.overlay-panel button {
+    border: none;
+    background-color: transparent;
+}
+
+.rigth-panel-active .overlay-container {
+    transform: translateX(-150%);
+}
+
+.rigth-panel-active .overlay {
+    transform: translateX(50%);
+}
+
+.rigth-panel-active .overlay-left {
+    transform: translateX(25%);
+}
+
+.rigth-panel-active .overlay-right {
+    transform: translateX(35%);
+}
+
+.rigth-panel-active .sign-in-container{
+    transform: translateX(20%);
+    opacity: 0;
+}
+
+.rigth-panel-active .sign-up-container{
+    transform: translateX(66.7%);
+    opacity: 1;
+    z-index: 5;
+    animation: show 0.6s;
+}
+
+@keyframes show {
+    0%, 50% {
+        opacity: 0;
+        z-index: 1;
+    }
+    50.1%, 100% {
+        opacity: 1;
+        z-index: 5;
+    }
+}
+
+.btnScaled {
+    animation: scaleBtn 0.6s;
+}
+
+@keyframes scaleBtn {
+    0%{
+       width: 143.67px;
+    }
+    50%{
+        width: 250px;
+     }
+     100%{
+        width: 143.67px;
+     }
+}
+
+.crime-tape {
+    position: absolute;
+    top: -12px;
+    left: -32px; 
+    transform: rotate(-19deg); 
+    z-index: 10; 
+}
+
+.crime-tape img {
+    border-radius: 5px;
+    width: 270px; 
+    opacity: 0.9;
+}
+
+body .back-btn {
+    position: absolute;
+    top: 55px;
+    left: 170px;
+    background-color: transparent;
+    border: none;
+    color: #000000;
+    font-size: 25px;
+    padding: 10px;
+    z-index: 11;
+}
+

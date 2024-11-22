@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Esportes gerais | Cadastro & Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="./css/styleCad.css">
+  <script src="./js/sessao.js"></script>
+</head>
+
+<body>
+  <div class="alerta_erro">
+    <div class="card_erro" id="cardErro">
+      <span id="mensagem_erro"></span>
+
+    </div>
+
+  </div>
+  <header class="header">
+    <nav class="navbar">
+      <a href="./index.html" class="logo-link">
+        <img
+          src="./assets/Default_A_modern_and_futuristic_logo_design_for_SportsLife_abb_2_5a1ee982-fcab-47bf-9010-dc3edca71808_0 (1).png"
+          alt="Logo da Empresa" class="logo">
+      </a>
+      <ul class="navbar-links">
+        <li><a href="./index.html" class="nav-button">Home</a></li>
+        <li><a href="./segunda.parte.html" class="nav-button">Minha História</a></li>
+        <li><a href="./segunda.parte.html#Ref" class="nav-button">Referências</a></li>
+        <li><a href="#Curiosidades" class="nav-button">Curiosidades</a></li>
+      </ul>
+      <a href="../Cadastro/login.html" class="profile-link">
+        <img src="../img/do-utilizador.png" alt="Perfil do Usuário" class="profile">
+      </a>
+    </nav>
+  </header>
+
+  <div class="container" id="container">
+
+
+    <div class="form-container sign-up-container">
+      
+        <h1>Crie sua conta</h1>
+        <div class="social-container">
+          <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+          <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <span>ou use o seu email para se registrar</span>
+        <div class="infield">
+          <input type="text" placeholder="Name" id="nome_input" />
+          <label></label>
+        </div>
+        <div class="infield">
+          <input type="email" placeholder="Email" name="email" id="email_input" />
+          <label></label>
+        </div>
+        <div class="infield">
+          <input type="password" placeholder="Password" id="senha_input" />
+          <label></label>
+        </div>
+        <button onclick="Cadastrar()">Cadastrar</button> <!--oficial-->
+     
+    </div>
+    <div class="form-container sign-in-container">
+      <div>
+        <h1>Faça seu login</h1>
+        <div class="social-container">
+          <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+          <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <span>ou use uma de suas contas</span>
+        <div class="infield">
+          <input type="email" placeholder="Email" name="email" id="email2_input" />
+          <label></label>
+        </div>
+        <div class="infield">
+          <input type="password" placeholder="Password" id="senha2_input" />
+          <label></label>
+        </div>
+        <a href="#" class="forgot">Esqueceu sua senha?</a>
+        <button onclick="entrar()">Entrar</button> <!--oficial-->
+      </div>
+    </div>
+    <div class="overlay-container" id="overlayCon">
+      <div class="overlay">
+        <div class="overlay-panel overlay-left">
+          <h1>Bem-vindo de volta!</h1>
+          <p>Se mantenha conectado fazendo login com as suas informações!</p>
+          <button>Já tenho conta</button> <!--interação-->
+        </div>
+        <div class="overlay-panel overlay-right">
+          <h1>Olá, amigo(a)! do mundo esportivo</h1>
+          <p>Ainda não tem uma conta? Vamos nos inspirar com a jornada no esporte!</p>
+          <button>Criar uma conta</button> <!--interação-->
+        </div>
+      </div>
+      <button id="overlayBtn"></button>
+    </div>
+  </div>
+
+</body>
+
+</html>
+
+<script>
+  const container = document.getElementById('container');
+  const overlayCon = document.getElementById('overlayCon');
+  const overlayBtn = document.getElementById('overlayBtn');
+
+  overlayBtn.addEventListener('click', () => {
+    container.classList.toggle('rigth-panel-active');
+
+    overlayBtn.classList.remove('btnScaled');
+    window.requestAnimationFrame(() => {
+      overlayBtn.classList.add('btnScaled');
+    })
+  });
+
+
+
+  function Cadastrar() {
+    // aguardar();
+
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+    var nomeVar = nome_input.value;
+    var emailVar = email_input.value;
+    var senhaVar = senha_input.value;
+
+    // Verificando se há algum campo em branco
+    if (
+      nomeVar == "" ||
+      emailVar == "" ||
+      senhaVar == ""
+    ) {
+      cardErro.style.display = "block";
+      // mensagem_erro.innerHTML =
+      //   "(Mensagem de erro para todos os campos em branco)";
+      alert(
+      "(Mensagem de erro para todos os campos em branco)");
+
+      finalizarAguardar();
+      return false;
+    }
+    // } else if (nomeVar.length <= 1) {
+    //   cardErro.style.display = "block";
+    //   mensagem_erro.innerHTML = "(O nome do usuário tem deve ter mais de um caractere!)";
+    //   finalizarAguardar();
+    //   return false;
+    // } else if (emailVar.includes('@') == false || emailVar.includes('.') == false) {
+    //   cardErro.style.display = "block";
+    //   mensagem_erro.innerHTML = "(O email deve conter '@' e '.' !)";
+    //   finalizarAguardar();
+    //   return false;
+    // } else if (senhaVar.length <= 6) {
+    //   cardErro.style.display = "block";
+    //   mensagem_erro.innerHTML = "(A senha deve ter mais de 6 carcateres!)";
+    //   finalizarAguardar();
+    //   return false;
+    // } else if (confirmacaoSenhaVar != senhaVar) {
+    //   cardErro.style.display = "block";
+    //   mensagem_erro.innerHTML = "(A confirmação da senha, deve ser igual a senha inserida acima!)";
+    //   finalizarAguardar();
+    //   return false;
+    // } else if (cpfVar.length != 11) {
+    //   cardErro.style.display = "block";
+    //   mensagem_erro.innerHTML = "(A quantidade de caracteres do CPF, deve ser igual a 11!)";
+    //   finalizarAguardar();
+    //   return false;
+    // } else {
+    //   setInterval(sumirMensagem, 5000);
+    // }
+
+    // Enviando o valor da nova input
+    
+    // console.log("estou na função cadastrar html")
+    fetch("/usuarios/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        nomeServer: nomeVar,
+        emailServer: emailVar,
+        senhaServer: senhaVar,
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+          cardErro.style.display = "block";
+
+          mensagem_erro.innerHTML =
+            "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+          setTimeout(() => {
+            window.location = "./cadastro.html";
+          }, "2000");
+
+          limparFormulario();
+            finalizarAguardar();
+        } else {
+          throw "Houve um erro ao tentar realizar o cadastro!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+        finalizarAguardar();
+      });
+
+    return false;
+  }
+
+  function sumirMensagem() {
+    cardErro.style.display = "none";
+  }
+
+  function entrar() {
+    // aguardar();
+
+    var emailVar = email2_input.value;
+    var senhaVar = senha2_input.value;
+
+    if (emailVar == "" || senhaVar == "") {
+      cardErro.style.display = "block"
+      mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+      // finalizarAguardar();
+      return false;
+    }
+    else {
+      setInterval(sumirMensagem, 5000)
+    }
+
+    console.log("FORM LOGIN: ", emailVar);
+    console.log("FORM SENHA: ", senhaVar);
+    // alert("fsdfsdaf")
+    fetch("/usuarios/autenticar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        emailServer: emailVar,
+        senhaServer: senhaVar
+      })
+    }).then(function (resposta) {
+      console.log("ESTOU NO THEN DO entrar()!")
+
+      if (resposta.ok) {
+        console.log(resposta);
+
+        resposta.json().then(json => {
+          console.log(json);
+          console.log(JSON.stringify(json));
+          sessionStorage.EMAIL_USUARIO = json.email;
+          sessionStorage.NOME_USUARIO = json.nome;
+          sessionStorage.ID_USUARIO = json.id;
+       
+
+          setTimeout(function () {
+            window.location = "./dashboard/DashJogos.html";
+          }, 1000); // apenas para exibir o loading
+
+        });
+
+      } else {
+
+        console.log("Houve um erro ao tentar realizar o login!");
+
+        resposta.text().then(texto => {
+          console.error(texto);
+         // finalizarAguardar(texto);
+        });
+      }
+
+    }).catch(function (erro) {
+      console.log(erro);
+    })
+
+    return false;
+  }
+
+  function sumirMensagem() {
+    cardErro.style.display = "none"
+  }
+
+</script>
