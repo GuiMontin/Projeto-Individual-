@@ -22,59 +22,56 @@
     <div class="painel">
       <header>
         <img src="assets/logo.png" alt="logo_game_awards" width="200px" />
-        <div>
-          <h1 class="titulos-italicos">Live</h1>
-          <h1>12.10</h1>
-        </div>
+       
       </header>
       <div class="titulos">
         <p class="titulos-italicos">CATEGORY</p>
-        <h1>GAME OF THE YEAR</h1>
+       <center> <h1>The best player in history</h1></center>
       </div>
       <div class="jogos-concorrentes">
-        <div class="jogo" onclick="votar('Animal Crossing')">
+        <div class="jogo" onclick="votar('AYRTON SENNA')">
           <img
-            src="assets/animal-crossing.png"
+src="https://th.bing.com/th/id/OIP.rceVvJ10lFvQWL7Yf0VTxwHaNB?rs=1&pid=ImgDetMain" class="senna"           alt=""
+            width="200px"
+            height="300px"
+          />
+          <p>AYRTON SENNA</p>
+        </div>
+        <div class="jogo" onclick="votar('MIKE TYSON')">
+          <img src="https://th.bing.com/th/id/OIP.4p57y98Ftz3gvFsb47t_UQHaJ5?rs=1&pid=ImgDetMain" class="mike"   alt="" width="200px" height="300px" />
+          <p>MIKE TYSON</p>
+        </div>
+        <div class="jogo" onclick="votar('PELÉ')">
+          <img
+            src="https://th.bing.com/th/id/R.128c2afc77fc122eec8ed3f01f4a52b1?rik=EupQTpY2LUYGdw&pid=ImgRaw&r=0"
+            class="pele"
             alt=""
             width="200px"
             height="300px"
           />
-          <p>ANIMAL CROSSING: NEW HORIZONS</p>
+          <p>PELÉ</p>
         </div>
-        <div class="jogo" onclick="votar('Doom Eternal')">
-          <img src="assets/doom.jpeg" alt="" width="200px" height="300px" />
-          <p>DOOM ETERNAL</p>
-        </div>
-        <div class="jogo" onclick="votar('Final Fantasy VII Remake')">
+        <div class="jogo" onclick="votar('MICHAEL JORDAN')">
           <img
-            src="assets/final-fantasy.jpg"
+            src="https://th.bing.com/th/id/R.9418a31a9785c4b30ff2d7ece3d5557b?rik=ZL6bsHGD9jJptw&riu=http%3a%2f%2fimg.mako.co.il%2f2014%2f02%2f19%2f310791_n_g.jpg&ehk=RSZTCEMwq4HTnViuKBfGVvRA3Tkd9u7FwaDyzHmE5a4%3d&risl=&pid=ImgRaw&r=0"
+            class="jordan"  alt=""
+            width="200px"
+            height="300px"
+          />
+          <p>MICHAEL JORDAN</p>
+        </div>
+        <div class="jogo" onclick="votar('MICHAEL PHELPS')">
+          <img src="https://wallpapers.com/images/hd/michael-phelps-award-sywdwasnvi2hlgu9.jpg" class="PHELPS"   width="200px" height="300px" />
+          <p>MICHAEL PHELPS</p>
+        </div>
+        <div class="jogo" onclick="votar('USAN BOLT')">
+          <img
+            src="https://wallpaperbat.com/img/7286306-usain-bolt-wallpaper-image-inside.jpg" class="bolt"  
             alt=""
             width="200px"
             height="300px"
           />
-          <p>FINAL FANTASY VII REMAKE</p>
-        </div>
-        <div class="jogo" onclick="votar('Ghost Of Tsushima')">
-          <img
-            src="assets/ghost-of-tsushima.png"
-            alt=""
-            width="200px"
-            height="300px"
-          />
-          <p>GHOST OF TSUSHIMA</p>
-        </div>
-        <div class="jogo" onclick="votar('Hades')">
-          <img src="assets/hades.png" width="200px" height="300px" />
-          <p>HADES</p>
-        </div>
-        <div class="jogo" onclick="votar('The Last of Us Part II')">
-          <img
-            src="assets/the-last-of-us.png"
-            alt=""
-            width="200px"
-            height="300px"
-          />
-          <p>The Last of Us Part II</p>
+          <p>USAN BOLT</p>
         </div>
       </div>
       <div class="grafico">
@@ -130,12 +127,12 @@
 
     // Criando estrutura para plotar gráfico - labels
     let labels = [
-      "Animal Crossing",
-      "Doom Eternal",
-      "Final Fantasy VII Remake",
-      "Ghost of Tsushima",
-      "Hades",
-      "The Last of Us Part II",
+      "AYRTON SENNA",
+      "MIKE TYSON",
+      "PELÉ",
+      "MICHAEL JORDAN",
+      "MICHAEL PHELPS",
+      "USAN BOLT",
     ];
 
     // Criando estrutura para plotar gráfico - dados
@@ -147,9 +144,12 @@
           data: [],
           fill: false,
           backgroundColor: [
-            "rgba(75, 192, 192, 0.2)",
-            "rgba(255, 99, 132, 0.2)",
-            "rgba(54, 162, 235, 0.2)",
+            "rgb(255, 255, 255);",
+            "rgb(255, 183, 0)",
+            "rgb(242, 255, 0)",
+            "rgb(255, 0, 0)",
+            "rgb(0, 68, 255)",
+            "rgb(9, 255, 1)",
           ],
           borderColor: [
             "rgba(75, 192, 192, 1)",
@@ -207,6 +207,7 @@
             display: true,
             labels: {
               color: "white",
+              
             },
           },
         },

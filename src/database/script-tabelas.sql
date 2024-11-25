@@ -27,12 +27,12 @@ CREATE TABLE votos (
 SELECT * FROM votos;
 
 INSERT INTO votos (jogo) VALUES 
-('Animal Crossing'),
-('Doom Eternal'),
-('Final Fantasy VII Remake'),
-('Ghost of Tsushima'),
-('Hades'),
-('The Last of Us Part II');
+('AYRTON SENNA'),
+('MIKE TYSON'),
+('PELÉ'),
+('MICHAEL JORDAN'),
+('MICHAEL PHELPS'),
+('USAN BOLT');
 
 -- CREATE DATABASE aquatech;
 

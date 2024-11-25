@@ -5,7 +5,7 @@
 .painel {
    background-image: 
    linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-   url('../assets/bola-de-ouro.webp.crdownload');
+   url('https://e1.pxfuel.com/desktop-wallpaper/253/26/desktop-wallpaper-s-football-stadium-football-ground.jpg');
    background-size: cover;
    background-position: center;
    background-attachment: fixed;
@@ -44,6 +44,49 @@ header {
    justify-content: space-around;
 }
 
+.jogo img {
+
+   border-radius: 10%;
+   border: 5px solid white;
+   box-shadow: 0 10px 20px black;
+}
+
+.jogo p {
+ text-align: center;
+ margin-top: 20px;
+ font-size: 20px;
+ color: wheat;
+ background: rgba(0, 0, 0,0.7);
+ border-radius: 10%;
+ box-shadow: 0 0px 10px rgb(255, 255, 255);
+}
+
+.jogo .senna:hover{
+   box-shadow: 0 10px 20px rgb(255, 255, 255);
+}
+.jogo .mike:hover{
+   box-shadow: 0 10px 20px rgb(255, 183, 0);
+}
+
+.jogo .pele:hover{
+   box-shadow: 0 10px 20px rgb(242, 255, 0);
+}
+
+.jogo .jordan:hover{
+   box-shadow: 0 10px 20px rgb(255, 0, 0);
+}
+
+.jogo .PHELPS:hover{
+   box-shadow: 0 10px 20px rgb(0, 68, 255);
+}
+
+.jogo .bolt:hover{
+   box-shadow: 0 10px 20px rgb(9, 255, 1);
+}
+
+
+
+
 .jogo {
    cursor: pointer;
    width: 200px;
@@ -61,4 +104,5 @@ header {
    display: flex;
    justify-content: center;
    margin-bottom: 30px;
+   gap: 30px;
 }

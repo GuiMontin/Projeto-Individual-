@@ -51,7 +51,7 @@ body {
 .header .logo {
     width: 60px; /* Ajuste a largura conforme necessário */
     height: auto;
-    margin-left: 100px;
+    margin-left: 50px;
 }
 
 
@@ -74,8 +74,8 @@ body {
 .navbar-links {
     list-style: none;
     display: flex;
-    gap: 80px;
-    margin-left: 30px;
+    gap: 120px;
+    
 }
 
 .nav-button {
