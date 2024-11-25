@@ -30,6 +30,12 @@ body {
    
     background-size: cover;
 }
+.bx{
+    width: 50%;
+    height: 20%;
+    color: #ffffff;
+  }
+  
 
 /* body {
     height: 100vh;
@@ -230,7 +236,7 @@ button {
     padding: 12px 45px;
     letter-spacing: 1px;
     text-transform: uppercase;
-    background: #ffffff;
+
     border: 3px solid #ffffff;
     cursor: pointer;
     transition: background 0.3s ease, color 0.3s ease;
@@ -327,6 +333,14 @@ button:hover {
     color: #fff;
 }
 
+
+.card_erro {
+
+color: red;
+margin: 20px 20px;
+font-size: 14px;
+}
+
 p {
     font-size: 14px;
     font-weight: 500;
@@ -396,21 +410,6 @@ p {
         width: 143.67px;
      }
 }
-
-.crime-tape {
-    position: absolute;
-    top: -12px;
-    left: -32px; 
-    transform: rotate(-19deg); 
-    z-index: 10; 
-}
-
-.crime-tape img {
-    border-radius: 5px;
-    width: 270px; 
-    opacity: 0.9;
-}
-
 body .back-btn {
     position: absolute;
     top: 55px;

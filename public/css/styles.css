@@ -2,12 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 :root {
-  /* --primary: #303841;
+  --primary: #303841;
   --primary-light: #3A4750;
   --secondary: #F3F3F3;
   --alertcolor: #FF9669;
   --logo-color: #2185D5;
-} */}
+}
 * {
     padding: 0;
     margin: 0;
@@ -52,6 +52,13 @@ body {
     width: 60px; /* Ajuste a largura conforme necessário */
     height: auto;
     margin-left: 100px;
+}
+
+
+.bx{
+  width: 50%;
+  height: 20%;
+  color: #ffffff;
 }
 
 /* Estilo de navegação */
@@ -536,7 +543,7 @@ color: var(--primary);
   padding: 10px 20px; /* Espaçamento interno */
   font-size: 16px; /* Tamanho do texto */
   color: white; /* Cor do texto */
-  background-color: var(--alertcolor); /* Cor do botão */
+  background-color: rgb(134, 10, 10); /* Cor do botão */
 
  justify-content: center;
   border-radius: 5px; 
