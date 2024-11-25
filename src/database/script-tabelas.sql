@@ -17,6 +17,23 @@ senha varchar(8));
 
 select*from usuario;
 
+
+CREATE TABLE votos (
+    id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    jogo VARCHAR(50) NOT NULL,
+    quantidade INT NOT NULL DEFAULT 0 
+);
+
+SELECT * FROM votos;
+
+INSERT INTO votos (jogo) VALUES 
+('Animal Crossing'),
+('Doom Eternal'),
+('Final Fantasy VII Remake'),
+('Ghost of Tsushima'),
+('Hades'),
+('The Last of Us Part II');
+
 -- CREATE DATABASE aquatech;
 
 -- USE aquatech;

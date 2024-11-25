@@ -18,10 +18,10 @@
     <title>SportsLife</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
-  <body>
+  <body onload="obterDadosGrafico()">
     <div class="painel">
       <header>
-        <img src="../assets/Default_A_modern_and_futuristic_logo_design_for_SportsLife_abb_2_5a1ee982-fcab-47bf-9010-dc3edca71808_0 (1).png" alt="logo_game_awards" width="200px" />
+        <img src="assets/logo.png" alt="logo_game_awards" width="200px" />
         <div>
           <h1 class="titulos-italicos">Live</h1>
           <h1>12.10</h1>
@@ -32,44 +32,44 @@
         <h1>GAME OF THE YEAR</h1>
       </div>
       <div class="jogos-concorrentes">
-        <div class="jogo" onclick="votarAnimalCrossing()">
+        <div class="jogo" onclick="votar('Animal Crossing')">
           <img
-            src="./img/animal-crossing.png"
+            src="assets/animal-crossing.png"
             alt=""
             width="200px"
             height="300px"
           />
           <p>ANIMAL CROSSING: NEW HORIZONS</p>
         </div>
-        <div class="jogo" onclick="votarDoomEternal()">
-          <img src="./img/doom.jpeg" alt="" width="200px" height="300px" />
+        <div class="jogo" onclick="votar('Doom Eternal')">
+          <img src="assets/doom.jpeg" alt="" width="200px" height="300px" />
           <p>DOOM ETERNAL</p>
         </div>
-        <div class="jogo" onclick="votarFinalFantasy()">
+        <div class="jogo" onclick="votar('Final Fantasy VII Remake')">
           <img
-            src="./img/final-fantasy.jpg"
+            src="assets/final-fantasy.jpg"
             alt=""
             width="200px"
             height="300px"
           />
           <p>FINAL FANTASY VII REMAKE</p>
         </div>
-        <div class="jogo" onclick="votarGhostTsushima()">
+        <div class="jogo" onclick="votar('Ghost Of Tsushima')">
           <img
-            src="./img/ghost-of-tsushima.png"
+            src="assets/ghost-of-tsushima.png"
             alt=""
             width="200px"
             height="300px"
           />
           <p>GHOST OF TSUSHIMA</p>
         </div>
-        <div class="jogo" onclick="votarHades()">
-          <img src="./img/hades.png" alt="" width="200px" height="300px" />
+        <div class="jogo" onclick="votar('Hades')">
+          <img src="assets/hades.png" width="200px" height="300px" />
           <p>HADES</p>
         </div>
-        <div class="jogo" onclick="votarLastOfUs()">
+        <div class="jogo" onclick="votar('The Last of Us Part II')">
           <img
-            src="./img/the-last-of-us.png"
+            src="assets/the-last-of-us.png"
             alt=""
             width="200px"
             height="300px"
@@ -84,170 +84,346 @@
   </body>
 </html>
 <script>
-  var votosAnimalCrossing = 0;
-  var votosDoomEternal = 0;
-  var votosFinalFantasy = 0;
-  var votosGhostTsushima = 0;
-  var votosHades = 0;
-  var votosLastOfUs = 0;
 
-  var myChartCanvas = document.getElementById("myCanvas");
 
-  var myChart = new Chart(myChartCanvas, {
-    type: "bar",
-    data: {
-      labels: [
-        "Animal Crossing",
-        "Doom Eternal",
-        "Final Fantasy VII Remake",
-        "Ghost of Tsushima",
-        "Hades",
-        "The Last of Us Part II",
-      ],
+ let myChart;
+
+  function votar(nomeJogo) {
+    fetch(`/votos/votar/${nomeJogo}`, {
+      method: "POST",
+    })
+      .then((response) => {
+        if (response.ok) {
+          console.log(`Voto contabilizado`);
+          atualizarGrafico();
+        } else {
+          console.error("Erro na votação ou jogo não encontrado");
+        }
+      })
+      .catch(function (error) {
+        console.error(`Erro ao realizar o voto: ${error.message}`);
+      });
+  }
+
+  function obterDadosGrafico() {
+    fetch(`/votos/ultimos`, { cache: "no-store" })
+      .then(function (response) {
+        if (response.ok) {
+          response.json().then(function (resposta) {
+            console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+            plotarGrafico(resposta);
+          });
+        } else {
+          console.error("Nenhum dado encontrado ou erro na API");
+        }
+      })
+      .catch(function (error) {
+        console.error(
+          `Erro na obtenção dos dados p/ gráfico: ${error.message}`
+        );
+      });
+  }
+
+  function plotarGrafico(resposta) {
+    console.log("iniciando plotagem do gráfico...");
+
+    // Criando estrutura para plotar gráfico - labels
+    let labels = [
+      "Animal Crossing",
+      "Doom Eternal",
+      "Final Fantasy VII Remake",
+      "Ghost of Tsushima",
+      "Hades",
+      "The Last of Us Part II",
+    ];
+
+    // Criando estrutura para plotar gráfico - dados
+    let dados = {
+      labels: labels,
       datasets: [
         {
           label: "Votos",
-          data: [
-            votosAnimalCrossing,
-            votosDoomEternal,
-            votosFinalFantasy,
-            votosGhostTsushima,
-            votosHades,
-            votosLastOfUs,
-          ],
+          data: [],
+          fill: false,
           backgroundColor: [
-            "rgba(153, 204, 255, 0.2)",
-            "rgba(255, 69, 0, 0.2)",
-            "rgba(135, 206, 250, 0.2)",
-            "rgba(169, 169, 169, 0.2)",
-            "rgba(255, 215, 0, 0.2)",
-            "rgba(0, 0, 139, 0.2)",
+            "rgba(75, 192, 192, 0.2)",
+            "rgba(255, 99, 132, 0.2)",
+            "rgba(54, 162, 235, 0.2)",
           ],
           borderColor: [
-            "rgba(153, 204, 255, 1)",
-            "rgba(255, 69, 0, 1)",
-            "rgba(135, 206, 250, 1)",
-            "rgba(169, 169, 169, 1)",
-            "rgba(255, 215, 0, 1)",
-            "rgba(0, 0, 139, 1)",
+            "rgba(75, 192, 192, 1)",
+            "rgba(255, 99, 132, 1)",
+            "rgba(54, 162, 235, 1)",
           ],
-          borderWidth: 2,
+          borderWidth: 1,
+          tension: 0.1,
         },
       ],
-    },
-    options: {
-      responsive: true,
-      scales: {
-        y: {
-          beginAtZero: true,
+    };
+
+    console.log("----------------------------------------------");
+    console.log(
+      'Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":'
+    );
+    console.log(resposta);
+
+    // Inserindo valores recebidos em estrutura para plotar o gráfico
+
+    for (i = 0; i < resposta.length; i++) {
+      var registro = resposta[i];
+      dados.datasets[0].data.push(registro.quantidade);
+    }
+
+    console.log("----------------------------------------------");
+    console.log("O gráfico será plotado com os respectivos valores:");
+    console.log("Labels:");
+    console.log(labels);
+    console.log("Dados:");
+    console.log(dados.datasets);
+    console.log("----------------------------------------------");
+
+    // Criando estrutura para plotar gráfico - config
+    const config = {
+      type: "bar",
+      data: dados,
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true,
+          },
+        },
+        plugins: {
+          title: {
+            display: true,
+            text: "VOTAÇÃO",
+            color: "#FFFFFF",
+            font: {
+              size: 20,
+            },
+          },
+          legend: {
+            display: true,
+            labels: {
+              color: "white",
+            },
+          },
         },
       },
-      plugins: {
-        title: {
-          display: true,
-          text: "VOTAÇÃO",
-          color: "#FFFFFF",
-          font: {
-            size: 20,
-          },
-        },
-        legend: {
-          display: true,
-          labels: {
-            color: "white",
-          },
-        },
-      },
-      scales: {
-        x: {
-          ticks: {
-            color: "white",
-          },
-        },
-        y: {
-          ticks: {
-            color: "white",
-          },
-        },
-      },
-    },
-  });
+    };
 
-  function votarAnimalCrossing() {
-    votosAnimalCrossing++;
-    myChart.data.datasets[0].data = [
-      votosAnimalCrossing,
-      votosDoomEternal,
-      votosFinalFantasy,
-      votosGhostTsushima,
-      votosHades,
-      votosLastOfUs,
-    ];
-    myChart.update();
+    // Adicionando gráfico criado em div na tela
+    myChart = new Chart(document.getElementById("myCanvas"), config);
   }
 
-  function votarDoomEternal() {
-    votosDoomEternal++;
-    myChart.data.datasets[0].data = [
-      votosAnimalCrossing,
-      votosDoomEternal,
-      votosFinalFantasy,
-      votosGhostTsushima,
-      votosHades,
-      votosLastOfUs,
-    ];
-    myChart.update();
+  function atualizarGrafico() {
+    fetch(`/votos/ultimos`, { cache: "no-store" })
+      .then(function (resposta) {
+        if (resposta.ok) {
+          resposta.json().then(function (respostaJSON) {
+            console.log(`Dados recebidos: ${JSON.stringify(respostaJSON)}`);
+            console.log(`Dados atuais do gráfico:`);
+            console.log(myChart.data);
+
+            myChart.data.datasets[0].data = [];
+
+            for (let i = 0; i < respostaJSON.length; i++) {
+              myChart.data.datasets[0].data.push(respostaJSON[i].quantidade);
+            }
+          
+            myChart.update();
+          });
+        } else {
+          console.error("Nenhum dado encontrado ou erro na API");
+        }
+      })
+      .catch(function (error) {
+        console.error(
+          `Erro na obtenção dos dados p/ gráfico: ${error.message}`
+        );
+      });
   }
 
-  function votarFinalFantasy() {
-    votosFinalFantasy++;
-    myChart.data.datasets[0].data = [
-      votosAnimalCrossing,
-      votosDoomEternal,
-      votosFinalFantasy,
-      votosGhostTsushima,
-      votosHades,
-      votosLastOfUs,
-    ];
-    myChart.update();
-  }
 
-  function votarGhostTsushima() {
-    votosGhostTsushima++;
-    myChart.data.datasets[0].data = [
-      votosAnimalCrossing,
-      votosDoomEternal,
-      votosFinalFantasy,
-      votosGhostTsushima,
-      votosHades,
-      votosLastOfUs,
-    ];
-    myChart.update();
-  }
+  
+//   var votosAnimalCrossing = 0;
+//   var votosDoomEternal = 0;
+//   var votosFinalFantasy = 0;
+//   var votosGhostTsushima = 0;
+//   var votosHades = 0;
+//   var votosLastOfUs = 0;
 
-  function votarHades() {
-    votosHades++;
-    myChart.data.datasets[0].data = [
-      votosAnimalCrossing,
-      votosDoomEternal,
-      votosFinalFantasy,
-      votosGhostTsushima,
-      votosHades,
-      votosLastOfUs,
-    ];
-    myChart.update();
-  }
+//   var myChartCanvas = document.getElementById("myCanvas");
 
-  function votarLastOfUs() {
-    votosLastOfUs++;
-    myChart.data.datasets[0].data = [
-      votosAnimalCrossing,
-      votosDoomEternal,
-      votosFinalFantasy,
-      votosGhostTsushima,
-      votosHades,
-      votosLastOfUs,
-    ];
-    myChart.update();
-  }
+//   var myChart = new Chart(myChartCanvas, {
+//     type: "bar",
+//     data: {
+//       labels: [
+//         "Animal Crossing",
+//         "Doom Eternal",
+//         "Final Fantasy VII Remake",
+//         "Ghost of Tsushima",
+//         "Hades",
+//         "The Last of Us Part II",
+//       ],
+//       datasets: [
+//         {
+//           label: "Votos",
+//           data: [
+//             votosAnimalCrossing,
+//             votosDoomEternal,
+//             votosFinalFantasy,
+//             votosGhostTsushima,
+//             votosHades,
+//             votosLastOfUs,
+//           ],
+//           backgroundColor: [
+//             "rgba(153, 204, 255, 0.2)",
+//             "rgba(255, 69, 0, 0.2)",
+//             "rgba(135, 206, 250, 0.2)",
+//             "rgba(169, 169, 169, 0.2)",
+//             "rgba(255, 215, 0, 0.2)",
+//             "rgba(0, 0, 139, 0.2)",
+//           ],
+//           borderColor: [
+//             "rgba(153, 204, 255, 1)",
+//             "rgba(255, 69, 0, 1)",
+//             "rgba(135, 206, 250, 1)",
+//             "rgba(169, 169, 169, 1)",
+//             "rgba(255, 215, 0, 1)",
+//             "rgba(0, 0, 139, 1)",
+//           ],
+//           borderWidth: 2,
+//         },
+//       ],
+//     },
+//     options: {
+//       responsive: true,
+//       scales: {
+//         y: {
+//           beginAtZero: true,
+//         },
+//       },
+//       plugins: {
+//         title: {
+//           display: true,
+//           text: "VOTAÇÃO",
+//           color: "#FFFFFF",
+//           font: {
+//             size: 20,
+//           },
+//         },
+//         legend: {
+//           display: true,
+//           labels: {
+//             color: "white",
+//           },
+//         },
+//       },
+//       scales: {
+//         x: {
+//           ticks: {
+//             color: "white",
+//           },
+//         },
+//         y: {
+//           ticks: {
+//             color: "white",
+//           },
+//         },
+//       },
+//     },
+//   });
+
+//   function votarAnimalCrossing() {
+//     votosAnimalCrossing++;
+//     myChart.data.datasets[0].data = [
+//       votosAnimalCrossing,
+//       votosDoomEternal,
+//       votosFinalFantasy,
+//       votosGhostTsushima,
+//       votosHades,
+//       votosLastOfUs,
+//     ];
+//     myChart.update();
+//   }
+
+//   function votarDoomEternal() {
+//     votosDoomEternal++;
+//     myChart.data.datasets[0].data = [
+//       votosAnimalCrossing,
+//       votosDoomEternal,
+//       votosFinalFantasy,
+//       votosGhostTsushima,
+//       votosHades,
+//       votosLastOfUs,
+//     ];
+//     myChart.update();
+//   }
+
+//   function votarFinalFantasy() {
+//     console.log("votarFinalFantasy")
+//     votosFinalFantasy++;
+//     myChart.data.datasets[0].data = [
+//       votosAnimalCrossing,
+//       votosDoomEternal,
+//       votosFinalFantasy,
+//       votosGhostTsushima,
+//       votosHades,
+//       votosLastOfUs,
+//     ];
+//     myChart.update();
+
+    
+//   }
+
+//   function votarGhostTsushima() {
+//     votosGhostTsushima++;
+//     myChart.data.datasets[0].data = [
+//       votosAnimalCrossing,
+//       votosDoomEternal,
+//       votosFinalFantasy,
+//       votosGhostTsushima,
+//       votosHades,
+//       votosLastOfUs,
+//     ];
+//     myChart.update();
+//   }
+
+//   function votarHades() {
+//     votosHades++;
+//     myChart.data.datasets[0].data = [
+//       votosAnimalCrossing,
+//       votosDoomEternal,
+//       votosFinalFantasy,
+//       votosGhostTsushima,
+//       votosHades,
+//       votosLastOfUs,
+//     ];
+//     myChart.update();
+//   }
+
+//   function votarLastOfUs() {
+//     votosLastOfUs++;
+//     myChart.data.datasets[0].data = [
+//       votosAnimalCrossing,
+//       votosDoomEternal,
+//       votosFinalFantasy,
+//       votosGhostTsushima,
+//       votosHades,
+//       votosLastOfUs,
+//     ];
+//     myChart.update();
+
+
+
+
+
+
+    
+//   }
+// 
+
 </script>
+
