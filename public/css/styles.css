@@ -56,9 +56,17 @@ body {
 
 
 .bx{
-  width: 50%;
+  width: 500%;
   height: 20%;
   color: #ffffff;
+}
+
+.bxs-user{
+  width: 200px;
+}
+
+.btlog{
+  width: 100px;
 }
 
 /* Estilo de navegação */
@@ -486,8 +494,11 @@ color: var(--primary);
   margin-bottom: 10px; /* Margem inferior para os itens */
 color: var(--primary);
 }
+ 
 
-/* .wapers */
+
+
+/* .wapers   familia*/
 
 .wrapper {
   display: flex;
@@ -519,6 +530,15 @@ color: var(--primary);
   margin-top: 100px;
   margin-bottom: 100px;
 }
+
+.wrapper-card img {
+  width: 100%; /* A imagem ocupa toda a largura do card */
+  height: 100%; /* Ajusta a altura para preencher o card */
+  object-fit: cover; /* Garante que a imagem preencha o card sem distorções */
+  border-radius: 6ox; /* Aplica o mesmo arredondamento do card */
+  transition: transform 0.3s ease; /* Animação suave ao passar o mouse */
+}
+
 
 /* Efeito ao passar o mouse no contêiner */
 .wrapper:hover > :not(:hover) {
@@ -617,9 +637,17 @@ margin: 40px;
   padding-left: 20px;
 }
 
-/* Referências  */
 
-/* Integrantes */
+
+
+
+
+
+
+
+
+
+
 
 /*Container que abriga os cards:*/
 

@@ -99,10 +99,43 @@ header {
    transition: 0.4s;
 }
 
-.grafico {
+.grafico  {
    height: 500px;
    display: flex;
    justify-content: center;
    margin-bottom: 30px;
    gap: 30px;
+   background-color: transparent;
+   color: red;
 }
+
+
+
+.publicacao {
+   border: 5px solid #4CAF50; /* Cor da borda */
+   border-radius: 15px; /* Bordas arredondadas */
+   padding: 10px; /* Espaçamento interno */
+   margin: 20px 0; /* Margem para separar da página */
+   background-color: transparent;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+   color:aqua;
+   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efeito suave ao passar o mouse */
+ }
+ 
+ .publicacao:hover {
+   transform: translateY(-5px); /* Levanta a caixa ao passar o mouse */
+   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Aumenta a sombra no hover */
+ }
+ 
+ .publicacao h2 {
+   color: #333; /* Cor do título */
+   font-size: 24px; /* Tamanho do título */
+   margin-bottom: 15px; /* Espaço abaixo do título */
+ }
+ 
+ .publicacao p {
+   color: #666; /* Cor do texto */
+   font-size: 16px; /* Tamanho do texto */
+   line-height: 1.6; /* Espaçamento entre linhas */
+ }
+ 

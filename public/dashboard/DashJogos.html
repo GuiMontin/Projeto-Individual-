@@ -1,89 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="shortcut icon"
-      href="./img/logo-navegador.png"
-      type="image/x-icon"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <title>SportsLife</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  </head>
-  <body onload="obterDadosGrafico()">
-    <div class="painel">
-      <header>
-        <img src="assets/logo.png" alt="logo_game_awards" width="200px" />
-       
-      </header>
-      <div class="titulos">
-        <p class="titulos-italicos">CATEGORY</p>
-       <center> <h1>The best player in history</h1></center>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+  <link rel="shortcut icon" href="./img/logo-navegador.png" type="image/x-icon" />
+  <link rel="stylesheet" href="style.css" />
+  <title>SportsLife</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body onload="obterDadosGrafico() ,atualizarFeed(), atualizarFeed2(), atualizarFeed3()">
+  <div class="painel">
+    <header>
+      <img src="assets/logo.png" alt="logo_game_awards" width="200px" />
+
+    </header>
+    <div class="titulos">
+      <h3>Olá, <span id="b_usuario"></span>!</h3>
+
+
+
+      <center>
+        <h1>The best player in history</h1>
+      </center>
+    </div>
+    <div class="jogos-concorrentes">
+      <div class="jogo" onclick="votar('AYRTON SENNA')">
+        <img src="https://th.bing.com/th/id/OIP.rceVvJ10lFvQWL7Yf0VTxwHaNB?rs=1&pid=ImgDetMain" class="senna" alt=""
+          width="200px" height="300px" />
+        <p>AYRTON SENNA</p>
       </div>
-      <div class="jogos-concorrentes">
-        <div class="jogo" onclick="votar('AYRTON SENNA')">
-          <img
-src="https://th.bing.com/th/id/OIP.rceVvJ10lFvQWL7Yf0VTxwHaNB?rs=1&pid=ImgDetMain" class="senna"           alt=""
-            width="200px"
-            height="300px"
-          />
-          <p>AYRTON SENNA</p>
-        </div>
-        <div class="jogo" onclick="votar('MIKE TYSON')">
-          <img src="https://th.bing.com/th/id/OIP.4p57y98Ftz3gvFsb47t_UQHaJ5?rs=1&pid=ImgDetMain" class="mike"   alt="" width="200px" height="300px" />
-          <p>MIKE TYSON</p>
-        </div>
-        <div class="jogo" onclick="votar('PELÉ')">
-          <img
-            src="https://th.bing.com/th/id/R.128c2afc77fc122eec8ed3f01f4a52b1?rik=EupQTpY2LUYGdw&pid=ImgRaw&r=0"
-            class="pele"
-            alt=""
-            width="200px"
-            height="300px"
-          />
-          <p>PELÉ</p>
-        </div>
-        <div class="jogo" onclick="votar('MICHAEL JORDAN')">
-          <img
-            src="https://th.bing.com/th/id/R.9418a31a9785c4b30ff2d7ece3d5557b?rik=ZL6bsHGD9jJptw&riu=http%3a%2f%2fimg.mako.co.il%2f2014%2f02%2f19%2f310791_n_g.jpg&ehk=RSZTCEMwq4HTnViuKBfGVvRA3Tkd9u7FwaDyzHmE5a4%3d&risl=&pid=ImgRaw&r=0"
-            class="jordan"  alt=""
-            width="200px"
-            height="300px"
-          />
-          <p>MICHAEL JORDAN</p>
-        </div>
-        <div class="jogo" onclick="votar('MICHAEL PHELPS')">
-          <img src="https://wallpapers.com/images/hd/michael-phelps-award-sywdwasnvi2hlgu9.jpg" class="PHELPS"   width="200px" height="300px" />
-          <p>MICHAEL PHELPS</p>
-        </div>
-        <div class="jogo" onclick="votar('USAN BOLT')">
-          <img
-            src="https://wallpaperbat.com/img/7286306-usain-bolt-wallpaper-image-inside.jpg" class="bolt"  
-            alt=""
-            width="200px"
-            height="300px"
-          />
-          <p>USAN BOLT</p>
-        </div>
+      <div class="jogo" onclick="votar('MIKE TYSON')">
+        <img src="https://th.bing.com/th/id/OIP.4p57y98Ftz3gvFsb47t_UQHaJ5?rs=1&pid=ImgDetMain" class="mike" alt=""
+          width="200px" height="300px" />
+        <p>MIKE TYSON</p>
       </div>
-      <div class="grafico">
-        <canvas id="myCanvas"></canvas>
+      <div class="jogo" onclick="votar('PELÉ')">
+        <img src="https://th.bing.com/th/id/R.128c2afc77fc122eec8ed3f01f4a52b1?rik=EupQTpY2LUYGdw&pid=ImgRaw&r=0"
+          class="pele" alt="" width="200px" height="300px" />
+        <p>PELÉ</p>
+      </div>
+      <div class="jogo" onclick="votar('MICHAEL JORDAN')">
+        <img
+          src="https://th.bing.com/th/id/R.9418a31a9785c4b30ff2d7ece3d5557b?rik=ZL6bsHGD9jJptw&riu=http%3a%2f%2fimg.mako.co.il%2f2014%2f02%2f19%2f310791_n_g.jpg&ehk=RSZTCEMwq4HTnViuKBfGVvRA3Tkd9u7FwaDyzHmE5a4%3d&risl=&pid=ImgRaw&r=0"
+          class="jordan" alt="" width="200px" height="300px" />
+        <p>MICHAEL JORDAN</p>
+      </div>
+      <div class="jogo" onclick="votar('MICHAEL PHELPS')">
+        <img src="https://wallpapers.com/images/hd/michael-phelps-award-sywdwasnvi2hlgu9.jpg" class="PHELPS"
+          width="200px" height="300px" />
+        <p>MICHAEL PHELPS</p>
+      </div>
+      <div class="jogo" onclick="votar('USAN BOLT')">
+        <img src="https://wallpaperbat.com/img/7286306-usain-bolt-wallpaper-image-inside.jpg" class="bolt" alt=""
+          width="200px" height="300px" />
+        <p>USAN BOLT</p>
       </div>
     </div>
-  </body>
+    <div class="grafico">
+      <canvas id="myCanvas"></canvas>
+    </div>
+
+    <div id="feed_container" class="feed-container">KPIIIII
+    </div>
+
+    <div id="feed_container2" class="feed-container">KPIIIII
+    </div>
+
+    <div id="feed_container3" class="feed-container">KPIIIII
+    </div>
+  </div>
+</body>
+
 </html>
 <script>
 
 
- let myChart;
+  b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+  let myChart;
 
   function votar(nomeJogo) {
     fetch(`/votos/votar/${nomeJogo}`, {
@@ -156,6 +157,7 @@ src="https://th.bing.com/th/id/OIP.rceVvJ10lFvQWL7Yf0VTxwHaNB?rs=1&pid=ImgDetMai
             "rgba(255, 99, 132, 1)",
             "rgba(54, 162, 235, 1)",
           ],
+          
           borderWidth: 1,
           tension: 0.1,
         },
@@ -192,7 +194,15 @@ src="https://th.bing.com/th/id/OIP.rceVvJ10lFvQWL7Yf0VTxwHaNB?rs=1&pid=ImgDetMai
         scales: {
           y: {
             beginAtZero: true,
+            grid: {
+              color: "black",  // Cor das linhas de grade horizontais
+            },
           },
+          x: {
+            grid: {
+              color: "black",  // Cor das linhas de grade verticais
+            },
+          }
         },
         plugins: {
           title: {
@@ -207,7 +217,6 @@ src="https://th.bing.com/th/id/OIP.rceVvJ10lFvQWL7Yf0VTxwHaNB?rs=1&pid=ImgDetMai
             display: true,
             labels: {
               color: "white",
-              
             },
           },
         },
@@ -232,7 +241,7 @@ src="https://th.bing.com/th/id/OIP.rceVvJ10lFvQWL7Yf0VTxwHaNB?rs=1&pid=ImgDetMai
             for (let i = 0; i < respostaJSON.length; i++) {
               myChart.data.datasets[0].data.push(respostaJSON[i].quantidade);
             }
-          
+
             myChart.update();
           });
         } else {
@@ -244,187 +253,156 @@ src="https://th.bing.com/th/id/OIP.rceVvJ10lFvQWL7Yf0VTxwHaNB?rs=1&pid=ImgDetMai
           `Erro na obtenção dos dados p/ gráfico: ${error.message}`
         );
       });
+
+
+
+
+  }
+
+  function atualizarFeed() {
+    fetch("/kpi1/listar").then(function (resposta) {
+      if (resposta.ok) {
+        if (resposta.status == 204) {
+          var feed = document.getElementById("feed_container");
+          var mensagem = document.createElement("span");
+          mensagem.innerHTML = "Nenhum resultado encontrado."
+          feed.appendChild(mensagem);
+          throw "Nenhum resultado encontrado!!";
+        }
+
+        resposta.json().then(function (resposta) {
+          console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+          var feed = document.getElementById("feed_container");
+          feed.innerHTML = "";
+          for (let i = 0; i < resposta.length; i++) {
+            var publicacao = resposta[i];
+
+            // criando e manipulando elementos do HTML via JavaScript
+            var divPublicacao = document.createElement("div");
+            var spanID = document.createElement("span");
+
+
+
+            spanID.innerHTML = "Quantidade de votos: <b>" + publicacao.soma + "</b>";
+
+            spanID.className = "publicacao";
+            divPublicacao.className = "class";
+            divPublicacao.appendChild(spanID);
+            feed.appendChild(divPublicacao)
+
+
+          }
+
+          finalizarAguardar();
+        });
+      } else {
+        throw ('Houve um erro na API!');
+      }
+    }).catch(function (resposta) {
+      console.error(resposta);
+      finalizarAguardar();
+    });
   }
 
 
-  
-//   var votosAnimalCrossing = 0;
-//   var votosDoomEternal = 0;
-//   var votosFinalFantasy = 0;
-//   var votosGhostTsushima = 0;
-//   var votosHades = 0;
-//   var votosLastOfUs = 0;
+  function atualizarFeed2() {
+    fetch("/kpi2/listar").then(function (resposta) {
+      if (resposta.ok) {
+        if (resposta.status == 204) {
+          var feed = document.getElementById("feed_container2");
+          var mensagem = document.createElement("span");
+          mensagem.innerHTML = "Nenhum resultado encontrado."
+          feed.appendChild(mensagem);
+          throw "Nenhum resultado encontrado!!";
+        }
 
-//   var myChartCanvas = document.getElementById("myCanvas");
+        resposta.json().then(function (resposta) {
+          console.log("Dados recebidos: ", JSON.stringify(resposta));
 
-//   var myChart = new Chart(myChartCanvas, {
-//     type: "bar",
-//     data: {
-//       labels: [
-//         "Animal Crossing",
-//         "Doom Eternal",
-//         "Final Fantasy VII Remake",
-//         "Ghost of Tsushima",
-//         "Hades",
-//         "The Last of Us Part II",
-//       ],
-//       datasets: [
-//         {
-//           label: "Votos",
-//           data: [
-//             votosAnimalCrossing,
-//             votosDoomEternal,
-//             votosFinalFantasy,
-//             votosGhostTsushima,
-//             votosHades,
-//             votosLastOfUs,
-//           ],
-//           backgroundColor: [
-//             "rgba(153, 204, 255, 0.2)",
-//             "rgba(255, 69, 0, 0.2)",
-//             "rgba(135, 206, 250, 0.2)",
-//             "rgba(169, 169, 169, 0.2)",
-//             "rgba(255, 215, 0, 0.2)",
-//             "rgba(0, 0, 139, 0.2)",
-//           ],
-//           borderColor: [
-//             "rgba(153, 204, 255, 1)",
-//             "rgba(255, 69, 0, 1)",
-//             "rgba(135, 206, 250, 1)",
-//             "rgba(169, 169, 169, 1)",
-//             "rgba(255, 215, 0, 1)",
-//             "rgba(0, 0, 139, 1)",
-//           ],
-//           borderWidth: 2,
-//         },
-//       ],
-//     },
-//     options: {
-//       responsive: true,
-//       scales: {
-//         y: {
-//           beginAtZero: true,
-//         },
-//       },
-//       plugins: {
-//         title: {
-//           display: true,
-//           text: "VOTAÇÃO",
-//           color: "#FFFFFF",
-//           font: {
-//             size: 20,
-//           },
-//         },
-//         legend: {
-//           display: true,
-//           labels: {
-//             color: "white",
-//           },
-//         },
-//       },
-//       scales: {
-//         x: {
-//           ticks: {
-//             color: "white",
-//           },
-//         },
-//         y: {
-//           ticks: {
-//             color: "white",
-//           },
-//         },
-//       },
-//     },
-//   });
+          var feed = document.getElementById("feed_container2");
+          feed.innerHTML = "";
+          for (let i = 0; i < resposta.length; i++) {
+            var publicacao = resposta[i];
 
-//   function votarAnimalCrossing() {
-//     votosAnimalCrossing++;
-//     myChart.data.datasets[0].data = [
-//       votosAnimalCrossing,
-//       votosDoomEternal,
-//       votosFinalFantasy,
-//       votosGhostTsushima,
-//       votosHades,
-//       votosLastOfUs,
-//     ];
-//     myChart.update();
-//   }
+            // criando e manipulando elementos do HTML via JavaScript
+            var divPublicacao = document.createElement("div");
+            var spanID = document.createElement("span");
 
-//   function votarDoomEternal() {
-//     votosDoomEternal++;
-//     myChart.data.datasets[0].data = [
-//       votosAnimalCrossing,
-//       votosDoomEternal,
-//       votosFinalFantasy,
-//       votosGhostTsushima,
-//       votosHades,
-//       votosLastOfUs,
-//     ];
-//     myChart.update();
-//   }
 
-//   function votarFinalFantasy() {
-//     console.log("votarFinalFantasy")
-//     votosFinalFantasy++;
-//     myChart.data.datasets[0].data = [
-//       votosAnimalCrossing,
-//       votosDoomEternal,
-//       votosFinalFantasy,
-//       votosGhostTsushima,
-//       votosHades,
-//       votosLastOfUs,
-//     ];
-//     myChart.update();
 
-    
-//   }
+            spanID.innerHTML = "Jogo com maior voto: <b>" + publicacao.jogo + "</b>";
 
-//   function votarGhostTsushima() {
-//     votosGhostTsushima++;
-//     myChart.data.datasets[0].data = [
-//       votosAnimalCrossing,
-//       votosDoomEternal,
-//       votosFinalFantasy,
-//       votosGhostTsushima,
-//       votosHades,
-//       votosLastOfUs,
-//     ];
-//     myChart.update();
-//   }
+            spanID.className = "publicacao";
+            divPublicacao.className = "class";
+            divPublicacao.appendChild(spanID);
+            feed.appendChild(divPublicacao)
 
-//   function votarHades() {
-//     votosHades++;
-//     myChart.data.datasets[0].data = [
-//       votosAnimalCrossing,
-//       votosDoomEternal,
-//       votosFinalFantasy,
-//       votosGhostTsushima,
-//       votosHades,
-//       votosLastOfUs,
-//     ];
-//     myChart.update();
-//   }
 
-//   function votarLastOfUs() {
-//     votosLastOfUs++;
-//     myChart.data.datasets[0].data = [
-//       votosAnimalCrossing,
-//       votosDoomEternal,
-//       votosFinalFantasy,
-//       votosGhostTsushima,
-//       votosHades,
-//       votosLastOfUs,
-//     ];
-//     myChart.update();
+          }
+
+
+          finalizarAguardar();
+        });
+      } else {
+        throw ('Houve um erro na API!');
+      }
+    }).catch(function (resposta) {
+      console.error(resposta);
+      finalizarAguardar();
+    });
+  }
+
+
+  function atualizarFeed3() {
+    fetch("/kpi3/listar").then(function (resposta) {
+      if (resposta.ok) {
+        if (resposta.status == 204) {
+          var feed = document.getElementById("feed_container3");
+          var mensagem = document.createElement("span");
+          mensagem.innerHTML = "Nenhum resultado encontrado."
+          feed.appendChild(mensagem);
+          throw "Nenhum resultado encontrado!!";
+        }
+
+        resposta.json().then(function (resposta) {
+          console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+          var feed = document.getElementById("feed_container3");
+          feed.innerHTML = "";
+          for (let i = 0; i < resposta.length; i++) {
+            var publicacao = resposta[i];
+
+            // criando e manipulando elementos do HTML via JavaScript
+            var divPublicacao = document.createElement("div");
+            var spanID = document.createElement("span");
+
+
+
+            spanID.innerHTML = "Jogo com maior voto: <b>" + publicacao.jogo + "</b>";
+
+            spanID.className = "publicacao";
+            divPublicacao.className = "class";
+            divPublicacao.appendChild(spanID);
+            feed.appendChild(divPublicacao)
+
+
+          }
+
+
+          finalizarAguardar();
+        });
+      } else {
+        throw ('Houve um erro na API!');
+      }
+    }).catch(function (resposta) {
+      console.error(resposta);
+      finalizarAguardar();
+    });
+  }
 
 
 
 
-
-
-    
-//   }
-// 
 
 </script>
-

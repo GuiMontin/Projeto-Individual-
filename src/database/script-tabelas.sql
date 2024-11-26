@@ -7,7 +7,8 @@ comandos para mysql server
 */
 
 
-use Sports;
+use sports;
+
 
 create table usuario (
 id int primary key auto_increment,
@@ -15,16 +16,6 @@ nome varchar(45),
 email varchar(45),
 senha varchar(8));
 
-select*from usuario;
-
-
-CREATE TABLE votos (
-    id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    jogo VARCHAR(50) NOT NULL,
-    quantidade INT NOT NULL DEFAULT 0 
-);
-
-SELECT * FROM votos;
 
 INSERT INTO votos (jogo) VALUES 
 ('AYRTON SENNA'),
@@ -33,6 +24,34 @@ INSERT INTO votos (jogo) VALUES
 ('MICHAEL JORDAN'),
 ('MICHAEL PHELPS'),
 ('USAN BOLT');
+
+select*from usuario;
+
+
+
+
+
+CREATE TABLE votos (
+    id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    jogo VARCHAR(50) NOT NULL,
+    quantidade INT NOT NULL DEFAULT 0,
+    fkusuario int,
+FOREIGN KEY (fkusuario) 
+REFERENCES usuario(id) 
+);
+    
+    
+SELECT 
+    u.nome AS usuario,
+    v.jogo,
+    v.quantidade
+FROM 
+    votos v
+left JOIN  
+    usuario u
+ON 
+    v.fkusuario = u.id;
+    
 
 -- CREATE DATABASE aquatech;
 

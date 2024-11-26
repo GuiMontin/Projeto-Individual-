@@ -23,6 +23,12 @@ var aquariosRouter = require("./src/routes/aquarios");
 var empresasRouter = require("./src/routes/empresas");
 var dashRouter = require("./src/routes/dash");
 var votosRouter = require("./src/routes/votos");
+// var kpi1Router = require("./src/routes/kpi1");
+
+var kpi1Router = require("./src/routes/kpi1");
+var kpi2Router = require("./src/routes/kpi2");
+var kpi3Router = require("./src/routes/kpi3");
+
 
 
 app.use(express.json());
@@ -39,6 +45,9 @@ app.use("/aquarios", aquariosRouter);
 app.use("/empresas", empresasRouter);
 app.use("/dash", dashRouter);
 app.use("/votos", votosRouter);
+app.use("/kpi1", kpi1Router);
+app.use("/kpi2", kpi2Router);
+app.use("/kpi3", kpi3Router);
 
 
 app.listen(PORTA_APP, function () {
