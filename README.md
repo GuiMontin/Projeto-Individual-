@@ -1,20 +1,24 @@
 # Projeto-Individual-
-Projeto de sistema sobre esporte
+
 🌟 Sobre o Projeto
-Este projeto foi desenvolvido com o objetivo de explorar e valorizar o impacto do esporte na vida das pessoas. O esporte, além de promover saúde e bem-estar, é um agente transformador, capaz de unir comunidades, fortalecer laços e proporcionar aprendizado contínuo por meio de disciplina, trabalho em equipe e superação de desafios.
 
-Nosso objetivo é inspirar a nova geração e oferecer um porto seguro para quem busca no esporte uma forma de alcançar equilíbrio, motivação e propósito.
+Este projeto foi criado para compartilhar minha história e a influência transformadora que o esporte teve em minha vida. Desde os desafios enfrentados até as conquistas pessoais, o esporte sempre foi meu porto seguro, oferecendo disciplina, força e motivação para superar os obstáculos.
 
-🚀 Funcionalidades
-Informações sobre esportes e suas modalidades.
-Dicas e conteúdos educativos para iniciantes e profissionais.
-Espaço para compartilhar histórias inspiradoras e motivar pessoas.
-Recursos que incentivam a prática esportiva como meio de transformação social.
+Por meio deste trabalho, quero inspirar outros a enxergarem o esporte como uma ferramenta poderosa para o crescimento pessoal e coletivo. Mais do que uma prática física, ele é um meio de transformação, que promove valores como respeito, união e perseverança.
+
+🚀 Objetivo
+Meu objetivo com este projeto é:
+
+Compartilhar minha trajetória e os aprendizados que o esporte trouxe.
+Inspirar outras pessoas, especialmente jovens, a acreditarem em seu potencial.
+Mostrar como o esporte pode ser uma fonte de acolhimento e superação.
+
 🎯 Visão
-Inspirar e apoiar pessoas a usarem o esporte como ferramenta para transformar suas vidas, com foco no acolhimento, educação e integração social.
+Acredito que o esporte tem o poder de transformar vidas e construir um futuro mais esperançoso, unindo pessoas de diferentes histórias em torno de um propósito comum.
 
 🌍 Missão
-Promover os valores do esporte como base para o crescimento pessoal, comunitário e global, garantindo acesso a recursos e conhecimento para todos.
+Minha missão é inspirar, acolher e apoiar quem busca no esporte uma maneira de vencer desafios e encontrar equilíbrio. Quero transmitir, por meio deste projeto, os valores que aprendi: resiliência, respeito e a importância de nunca desistir.
 
-🤝 Contribuição
-Convidamos todos os interessados em esporte e transformação social a contribuírem com ideias, feedbacks e melhorias para o projeto. Juntos, podemos construir um futuro mais saudável e conectado por meio do esporte.
+❤️ Agradecimento
+Agradeço à minha família, que sempre me apoiou, e aos treinadores, colegas e amigos que fizeram parte dessa jornada. Este projeto é uma forma de retribuir tudo o que o esporte me ensinou e oferecer um caminho de inspiração para outros.
+
