@@ -18,8 +18,8 @@
 <body onload="obterDadosGrafico() ,atualizarFeed(), atualizarFeed2(), atualizarFeed3()">
   <div class="painel">
     <header>
-      <img src="assets/logo.png" alt="logo_game_awards" width="200px" />
-
+      <a href="../index.html"><img  src="../assets/Default_A_modern_and_futuristic_logo_design_for_SportsLife_abb_2_5a1ee982-fcab-47bf-9010-dc3edca71808_0 (1).png" alt="logo_game_awards" width="200px" />
+      </a>
     </header>
     <div class="titulos">
       <h3>Olá, <span id="b_usuario"></span>!</h3>
@@ -66,15 +66,16 @@
     <div class="grafico">
       <canvas id="myCanvas"></canvas>
     </div>
-
-    <div id="feed_container" class="feed-container">KPIIIII
+<section class="caixa-feed">
+    <div id="feed_container" class="feed-container">
     </div>
 
-    <div id="feed_container2" class="feed-container">KPIIIII
+    <div id="feed_container2" class="feed-container2">
     </div>
 
-    <div id="feed_container3" class="feed-container">KPIIIII
+    <div id="feed_container3" class="feed-container3">
     </div>
+  </section>
   </div>
 </body>
 
@@ -284,7 +285,7 @@
 
 
 
-            spanID.innerHTML = "Quantidade de votos: <b>" + publicacao.soma + "</b>";
+            spanID.innerHTML = "Quantidade de votos: <br><b>" + publicacao.soma + "</b>";
 
             spanID.className = "publicacao";
             divPublicacao.className = "class";
@@ -331,7 +332,7 @@
 
 
 
-            spanID.innerHTML = "Jogo com maior voto: <b>" + publicacao.jogo + "</b>";
+            spanID.innerHTML = "Atleta com maior voto: <br> <b>" + publicacao.jogo + "</b>";
 
             spanID.className = "publicacao";
             divPublicacao.className = "class";
@@ -379,7 +380,7 @@
 
 
 
-            spanID.innerHTML = "Jogo com maior voto: <b>" + publicacao.jogo + "</b>";
+            spanID.innerHTML = "Atleta com menos voto:<br> <b>" + publicacao.jogo + "</b>";
 
             spanID.className = "publicacao";
             divPublicacao.className = "class";

@@ -9,7 +9,12 @@ button {
 }
 
 body{
-    background-color: #121214;
+    background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url('../assets/pc_fifa18standardb.webp  ');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     color: white;
     height: 100vh;
     display: flex;
@@ -18,19 +23,30 @@ body{
 
 }
 
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+    position: relative;
+    
+ }
 
 
 
 .container {
 
-background-color: #121214;
+background-color: white;
 width: 90%;
 max-width: 800px;
+z-index: 0;
 
-border: 2pz solid #e1e1e6;
+border: 7px solid black;
 border-radius: 6px;
 padding: 14px;
-box-shadow: 0 0 2px 2px;
+box-shadow: 0 10px 10px red;
+color: black;
+
 
 display: flex;
 flex-direction: column;
@@ -72,8 +88,10 @@ gap: 16px;
 }
 
 .button {
-    background-color: blue;
+    background-color: black;
     color: white;
+
+    text-shadow: 0 0 10px gold;
     font-size: 16px;
     font-weight: bold;
     border: 0;
@@ -98,11 +116,11 @@ cursor: not-allowed;
 }
 
 .correct {
-    background-color: green;
+    background-color: rgb(0, 141, 0);
 }
 
 .incorrect {
-    background-color: red;
+    background-color: rgb(160, 4, 4);
 }
 
 

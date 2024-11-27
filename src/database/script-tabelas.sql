@@ -51,6 +51,26 @@ left JOIN
     usuario u
 ON 
     v.fkusuario = u.id;
+
+
+
+
+
+
+
+ SELECT jogo
+FROM votos as max
+ORDER BY quantidade DESC
+LIMIT 1;
+
+select jogo 
+from votos as min 
+order by quantidade asc
+limit 1;
+ ;
+
+
+select sum(quantidade) from votos ;
     
 
 -- CREATE DATABASE aquatech;

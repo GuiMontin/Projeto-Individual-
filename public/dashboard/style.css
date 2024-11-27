@@ -5,7 +5,7 @@
 .painel {
    background-image: 
    linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-   url('https://e1.pxfuel.com/desktop-wallpaper/253/26/desktop-wallpaper-s-football-stadium-football-ground.jpg');
+   url('https://c4.wallpaperflare.com/wallpaper/1019/243/824/soccer-sport-club-corinthians-paulista-logo-hd-wallpaper-preview.jpg');
    background-size: cover;
    background-position: center;
    background-attachment: fixed;
@@ -32,11 +32,13 @@ header {
    display: flex;
    flex-direction: column;
    gap: 15px;
-   padding: 20px;
+   padding: 10px;
 }
 
 .titulos h1 {
    font-size: 40px;
+   color: white;
+   text-shadow: 0 0 10px gold;
 }
 
 .jogos-concorrentes {
@@ -84,8 +86,16 @@ header {
    box-shadow: 0 10px 20px rgb(9, 255, 1);
 }
 
+h3 { 
+   font-size: 25px;
+   color: white;
+   text-shadow: 0 0 10px gold;
+}
 
 
+.painel .mycanvas {
+   margin-top: 400px;
+}
 
 .jogo {
    cursor: pointer;
@@ -110,17 +120,81 @@ header {
 }
 
 
+ .caixa-feed {
+   display: flex;
+   gap: 10px;
+  
+   margin: 20PX 60PX;
+   justify-content: space-between
+} 
 
-.publicacao {
-   border: 5px solid #4CAF50; /* Cor da borda */
-   border-radius: 15px; /* Bordas arredondadas */
-   padding: 10px; /* Espaçamento interno */
-   margin: 20px 0; /* Margem para separar da página */
-   background-color: transparent;
-   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-   color:aqua;
-   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efeito suave ao passar o mouse */
- }
+.caixa-feed .feed-container{
+   
+  display: flex;
+   font-size: 15px;
+   text-align: center;
+   margin-top: 20px;
+   font-size: 20px;
+   background:black;
+   color: white;
+   text-shadow: 0 0 10px gold;
+   border: 3px solid white;
+
+   padding: 20px;
+   border-radius: 15%;
+   box-shadow: 0 0px 20px rgb(238, 255, 0);
+} 
+
+
+.caixa-feed .feed-container2{
+   
+   display: flex;
+    font-size: 15px;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 20px;
+    color: white;
+    text-shadow: 0 0 10px gold;
+    background:black;
+    border: 3px solid white;
+    padding: 20px;
+    border-radius: 15%;
+    box-shadow: 0 0px 20px rgb(238, 255, 0);
+ } 
+
+
+ 
+.caixa-feed .feed-container3{
+   
+   display: flex;
+    font-size: 15px;
+    text-align: center;
+    background:black;
+    margin-top: 20px;
+    font-size: 20px;
+    color: white;
+    border: 3px solid white;
+    text-shadow: 0 0 10px gold;
+    padding: 20px;
+    border-radius: 15%;
+    box-shadow: 0 0px 20px rgb(238, 255, 0);
+ } 
+
+
+
+/* .publicacao { */
+   /* display: flex; */
+   /* justify-content: space-between; */
+   /* border: 5px solid #4CAF50; Cor da borda */
+   /* border-radius: 15px; Bordas arredondadas */
+   /* padding: 10px; Espaçamento interno */
+   /* margin: 20px 0; Margem para separar da página */
+   /* background-color: transparent; */
+   /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); Sombra suave */
+   /* color:aqua; */
+   /* font-size: 20px; */
+   /* transition: transform 0.3s ease, box-shadow 0.3s ease; Efeito suave ao passar o mouse */
+ /* } */
  
  .publicacao:hover {
    transform: translateY(-5px); /* Levanta a caixa ao passar o mouse */
